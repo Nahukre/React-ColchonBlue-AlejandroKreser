@@ -195,3 +195,31 @@ li li.item {
   color: #548aff;
   padding-top: 15px;
 }
+
+/* contador */
+.contador {
+  display: flex;
+  border: solid;
+  border-color: greenyellow;
+  border-radius: 5px;
+  width: 100px;
+  text-align: center;
+  
+}
+.botonesContador {
+  display: inline-block;
+  font-size: 30px;
+  width: 100px;
+  border-color:  transparent;
+  background-color: transparent;
+  color: greenyellow;
+  border-radius: 5px;
+  margin-left: 2px;
+  margin-right: 2px;
+  font-weight: bold;
+}
+.cantidad {
+  padding: 10px;
+  color: greenyellow;
+  text-align: center;
+}
