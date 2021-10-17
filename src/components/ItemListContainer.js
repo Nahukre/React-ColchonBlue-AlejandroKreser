@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 export const ItemListContainer = () => {
 
-    const [producto, setProductos] =useState([]);
+    const [productos, setProductos] =useState([]);
     
     const getData = (data) =>
         new Promise((resolve, reject) => {
@@ -29,11 +29,11 @@ export const ItemListContainer = () => {
         <><div class="ItemListContainer">
             <Title text="Home"/>
             <ItemList inversiones= {inversiones}/>
-            {/* {productos.length
+            {productos.length
             ? productos.map(producto => (
             <ItemList inversiones={producto} key={producto.id}/>
             ))
-            : "Loading..."} */}
+            : "Loading..."}
         </div>
         </>
     );
