@@ -1,4 +1,7 @@
- [{
+
+
+export const inversiones = [
+    {
             "id": 1,
             "denominacion": "Dolar solidario",
             "nivelRiesgo": "Activo recomendado para inversores conservadores",

@@ -1,12 +1,12 @@
 import { ItemList } from "./ItemList";
 import { Title } from "./Title";
 import { useState } from "react/cjs/react.development";
-import inversiones from "../inversiones.json";
+import inversiones from "../inversiones"
 import { useEffect } from "react";
 
 export const ItemListContainer = () => {
 
-    const [productos, setProductos] =useState([]);
+    const [producto, setProductos] =useState([]);
     
     const getData = (data) =>
         new Promise((resolve, reject) => {
@@ -20,20 +20,20 @@ export const ItemListContainer = () => {
     });
 
     useEffect(() => {
-    getData(inversiones)
-    .then(res => setProductos(res))
-    .catch(err => console.log(err))
+        getData(inversiones)
+            .then(res => setProductos(res))
+        .catch(err => console.log(err))
     }, []);
 
     return (
         <><div class="ItemListContainer">
             <Title text="Home"/>
-            <ItemList/>
-            {productos.length
-             ? productos.map(producto => (
-             <ItemList inversiones={producto} key={producto.id}/>
-             ))
-            : "Loading..."}
+            <ItemList inversiones= {inversiones}/>
+            {/* {productos.length
+            ? productos.map(producto => (
+            <ItemList inversiones={producto} key={producto.id}/>
+            ))
+            : "Loading..."} */}
         </div>
         </>
     );
