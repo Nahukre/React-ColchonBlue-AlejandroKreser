@@ -128,16 +128,7 @@ ul.menu__items--font li {
   margin-top: -45px;
   font-size: 30px;
   display: inline-block;
-  vertical-align: middle;
-
-  /* transform: skew(-20deg, 0deg);
-  border-right: solid;
-  border-left: solid;
-  border-color: black;
-  line-height: 30px;
-  padding: 3px;
-  background-color: greenyellow; */
-  
+  vertical-align: middle;  
 }
 
 
@@ -196,30 +187,67 @@ li li.item {
   padding-top: 15px;
 }
 
+/* cards */
+
+.card__dolares {
+  text-align: center;
+  width: 300px;
+  border: solid;
+  border-radius: 5px;
+  border-color: greenyellow;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 40px;
+  display: inline-block;
+}
+
+.dolarNombre {
+  font-size: 30px;
+  color: greenyellow;
+}
+
+.dolarPrecio {
+  font-size: 25px;
+  color: greenyellow;
+}
+
+.dolarFoto {
+  height: 200px;
+  width: 100%;
+}
+
 /* contador */
 .contador {
   display: flex;
-  border: solid;
-  border-color: greenyellow;
-  border-radius: 5px;
-  width: 100px;
-  text-align: center;
-  
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
 }
 .botonesContador {
   display: inline-block;
   font-size: 30px;
-  width: 100px;
   border-color:  transparent;
   background-color: transparent;
   color: greenyellow;
   border-radius: 5px;
-  margin-left: 2px;
-  margin-right: 2px;
+  margin-left: 3%;
+  margin-right: 3%;
   font-weight: bold;
 }
 .cantidad {
   padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
   color: greenyellow;
   text-align: center;
+}
+.aniadir {
+  margin-bottom: 10px;
+  color: greenyellow;
+  background-color: transparent;
+  border: solir;
+  border-color: greenyellow;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 15px;
 }

@@ -1,22 +1,34 @@
 import { useState } from "react";
 
-export const ItemCount  = ({stock, initial, onAdd}) => {
+export const ItemCount  = ({stock, initial}) => {
     
     const [counter, setCounter] = useState(initial);
 
     const resta = () => {
-        setCounter(counter - 1);
+        if(counter > 1) {
+        setCounter(counter - 1)}
+        else 
+        setCounter(counter);
     };
     const suma = () => {
-        setCounter(counter + 1);
+        if (counter < stock){
+        setCounter(counter + 1)}
+        else
+        setCounter(counter);
+    };
+    const onAdd = () => {
+        console.log(counter)
     };
 
     return (
-        <div class="contador">
-            <button class="botonesContador" onClick={resta}>-</button> <br />
-            <span class="cantidad" stock="10" initial="1" >{counter}</span>
-            <button class="botonesContador" onClick={suma}>+</button> <br />
+        <><div className="contador">
+                <button className="botonesContador" onClick={resta}>-</button>
+                <span className="cantidad">{counter}</span>
+                <button className="botonesContador" onClick={suma}>+</button>
         </div>
+        <div>
+            <button className="aniadir" onClick={onAdd}>Añadir al carrito</button>
+        </div></>
     
     );
 }
