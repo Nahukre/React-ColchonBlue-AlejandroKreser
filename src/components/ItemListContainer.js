@@ -1,7 +1,7 @@
 import { ItemList } from "./ItemList";
 import { Title } from "./Title";
 import { useState } from "react/cjs/react.development";
-import inversiones from "../inversiones"
+import { inversiones } from "../inversiones"
 import { useEffect } from "react";
 
 export const ItemListContainer = () => {
@@ -28,12 +28,12 @@ export const ItemListContainer = () => {
     return (
         <><div class="ItemListContainer">
             <Title text="Home"/>
-            <ItemList inversiones= {inversiones}/>
-            {productos.length
+            <ItemList inversionesListado={productos} />
+            {/* {productos.length
             ? productos.map(producto => (
             <ItemList inversiones={producto} key={producto.id}/>
             ))
-            : "Loading..."}
+            : "Loading..."} */}
         </div>
         </>
     );

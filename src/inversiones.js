@@ -1,4 +1,12 @@
-
+import dolar from "../img/dolar.jpg";
+import dolarBolsa from "../img/dolarBolsa.jpg";
+import dolarBlue from "../img/dolarBlue.jpg";
+import apple from "../img/apple.jpg";
+import amazon from "../img/amazon.jpg";
+import tesla from "../img/tesla.png";
+import oro from "../img/oro.jpg";
+import ethereum from "../img/ethereum.png";
+import bitcoin from "../img/bitcoin.png";
 
 export const inversiones = [
     {
@@ -7,7 +15,7 @@ export const inversiones = [
             "nivelRiesgo": "Activo recomendado para inversores conservadores",
             "valor": 170,
             "descripcion": "El Dólar solidario es aquel que se consigue en el mercado formal. Su cotización se obtiene de sumarle al dolar oficial el impuesto pais y el impuesto a las ganancias. Solo se pueden comprar 200 por mes.",
-            "foto": "./img/dolarSolidario.jpg"
+            "foto": dolar
         },
         {
             "id": 2,
@@ -15,7 +23,7 @@ export const inversiones = [
             "nivelRiesgo": "Activo recomendado para inversores conservadores",
             "valor": 175,
             "descripcion": "El Dólar bolsa es aquel que surge de la compra venta de titulos en el mercado financiero. Si se compra dolar solidario no se puede adquirir este dolar.",
-            "foto": "./img/dolarBolsa.jpg"
+            "foto": dolarBolsa
         },
         {
             "id": 3,
@@ -23,7 +31,7 @@ export const inversiones = [
             "nivelRiesgo": "Activo recomendado para inversores conservadores",
             "valor": 185,
             "descripcion": "El Dólar Blue es aquel que se consigue en el mercado paralelo. Su cotización generalmente es superior a la cotización del oficial y suele aumentar a medida que aumentan las restricciones para la compra de dólares al precio oficial.",
-            "foto": "./img/dolarBlue.jpg"
+            "foto": dolarBlue
         },
         {
             "id": 4,
@@ -31,7 +39,7 @@ export const inversiones = [
             "nivelRiesgo": "Activo recomendado para inversores moderados",
             "valor": 3500,
             "descripcion": "Cedears  (Certificados de Depósito Argentinos) de la compañia Apple. Activo financiero atado al dolar y a la valuación de la empresa en el mercado.",
-            "foto": "./img/apple.jpg"
+            "foto": apple
         },
         {
             "id": 5,
@@ -39,7 +47,7 @@ export const inversiones = [
             "nivelRiesgo": "Activo recomendado para inversores moderados",
             "valor": 4500,
             "descripcion": "Cedears  (Certificados de Depósito Argentinos) de la compañia Amazon. Activo financiero atado al dolar y a la valuación de la empresa en el mercado.",
-            "foto": "./img/amazon.jpg"
+            "foto": amazon
         },
         {
             "id": 6,
@@ -47,7 +55,7 @@ export const inversiones = [
             "nivelRiesgo": "Activo recomendado para inversores agresivos",
             "valor": 8000,
             "descripcion": "Cedears  (Certificados de Depósito Argentinos) de la compañia Tesla. Activo financiero atado al dolar y a la valuación de la empresa en el mercado. Este activo es considerado de riesgo.",
-            "foto": "./img/tesla.png"
+            "foto": tesla
         },
         {
             "id": 7,
@@ -55,7 +63,7 @@ export const inversiones = [
             "nivelRiesgo": "Activo recomendado para inversores conservadores",
             "valor": 55700,
             "descripcion": "El oro es un metal precioso utilizado como reserva de valor. Se caracteriza por tener poca variación en su cotización y ser resguardo de valor en epocas de inflación. El valor que se toma es por gramo.",
-            "foto": "./img/oro.jpg"
+            "foto": oro
         },
         {
             "id": 8,
@@ -63,7 +71,7 @@ export const inversiones = [
             "nivelRiesgo": "Activo recomendado para inversores agresivos",
             "valor": 500000,
             "descripcion": "Ethereum es la moneda digital  con la segunda capitalización de mercado. Se caracteriza por ser una plataforma descentralizada, que sirve para programar contratos inteligentes.",
-            "foto": "./img/ethereum.jpg"
+            "foto": ethereum
         },
         {
             "id": 9,
@@ -71,7 +79,7 @@ export const inversiones = [
             "nivelRiesgo": "Activo recomendado para inversores agresivos",
             "valor": 8000000,
             "descripcion": "Bitcoin es una criptomoneda descentralizada, es decir que no existe una autoridad de control que sea responsable de su emisión y registro de sus movimientos.",
-            "foto": "./img/bitcoin2.jpg"
+            "foto": bitcoin
         }
 
     ]
