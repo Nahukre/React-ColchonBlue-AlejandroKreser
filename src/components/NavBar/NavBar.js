@@ -1,9 +1,10 @@
-import colchon from "../img/colchon.png";
-import { CartWidget } from "./CartWidget";
+import colchon from "../../img/colchon.png";
+import { CartWidget } from "../CartWidget/CartWidget";
+import "./NavBar.css";
 
 export const NavBar = () => {
     return (
-        <><header class="encabezado__index">
+        <><header className="encabezado__index">
             <div className="encabezado__logo">
                 <img src={colchon} className="encabezado__logo" alt="logo" />
             </div>

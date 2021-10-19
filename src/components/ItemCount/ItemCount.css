@@ -1,0 +1,35 @@
+/* contador */
+.contador {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.botonesContador {
+    display: inline-block;
+    font-size: 30px;
+    border-color:  transparent;
+    background-color: transparent;
+    color: greenyellow;
+    border-radius: 5px;
+    margin-left: 3%;
+    margin-right: 3%;
+    font-weight: bold;
+}
+.cantidad {
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: greenyellow;
+    text-align: center;
+}
+.aniadir {
+    margin-bottom: 10px;
+    color: greenyellow;
+    background-color: transparent;
+    border: solir;
+    border-color: greenyellow;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 15px;
+}

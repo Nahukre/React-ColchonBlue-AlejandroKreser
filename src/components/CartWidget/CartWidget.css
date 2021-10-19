@@ -1,0 +1,25 @@
+/* CardWidget */
+.carrito {
+    width: 60px;
+    height: 45px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 20px;
+    margin-right: -25px;
+    margin-top: 5px;
+    text-align: right;
+}
+
+.carrito:hover {
+    transform: scale(1.15)
+}
+
+.ItemListContainer {
+    background-color: #282c34;
+}
+
+.titulo {
+    font-size: 45px;
+    color: #548aff;
+    padding-top: 15px;
+}

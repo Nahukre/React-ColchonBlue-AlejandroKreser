@@ -1,7 +1,7 @@
-import { ItemList } from "./ItemList";
-import { Title } from "./Title";
+import { ItemList } from "../ItemList/ItemList";
+import { Title } from "../Title/Title";
 import { useState } from "react/cjs/react.development";
-import { inversiones } from "../inversiones"
+import { inversiones } from "../../services/inversiones"
 import { useEffect } from "react";
 
 export const ItemListContainer = () => {
@@ -16,7 +16,7 @@ export const ItemListContainer = () => {
             } else {
                 reject("No se encontró nada");
             }
-        },3000)
+        },2000)
     });
 
     useEffect(() => {
@@ -26,14 +26,9 @@ export const ItemListContainer = () => {
     }, []);
 
     return (
-        <><div class="ItemListContainer">
+        <><div className="ItemListContainer">
             <Title text="Home"/>
             <ItemList inversionesListado={productos} />
-            {/* {productos.length
-            ? productos.map(producto => (
-            <ItemList inversiones={producto} key={producto.id}/>
-            ))
-            : "Loading..."} */}
         </div>
         </>
     );

@@ -1,6 +1,6 @@
 export const Title = (props) => {
     return (
-        <><h2 class="titulo">{props.text}</h2>
+        <><h2 className="titulo">{props.text}</h2>
         </>
     );
 }

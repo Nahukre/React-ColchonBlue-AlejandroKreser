@@ -5,8 +5,8 @@ import apple from "../img/apple.jpg";
 import amazon from "../img/amazon.jpg";
 import tesla from "../img/tesla.png";
 import oro from "../img/oro.jpg";
-import ethereum from "../img/ethereum.png";
-import bitcoin from "../img/bitcoin.png";
+import ethereum from "../img/ethereum.jpg";
+import bitcoin from "../img/bitcoin.jpg";
 
 export const inversiones = [
     {

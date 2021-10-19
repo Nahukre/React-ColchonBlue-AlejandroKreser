@@ -1,0 +1,28 @@
+/* cards */
+
+.card__dolares {
+    text-align: center;
+    width: 300px;
+    border: solid;
+    border-radius: 5px;
+    border-color: greenyellow;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 40px;
+    display: inline-block;
+}
+
+.dolarNombre {
+    font-size: 30px;
+    color: greenyellow;
+}
+
+.dolarPrecio {
+    font-size: 25px;
+    color: greenyellow;
+}
+
+.dolarFoto {
+    height: 200px;
+    width: 100%;
+}
