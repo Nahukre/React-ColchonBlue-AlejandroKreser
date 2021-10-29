@@ -12,8 +12,8 @@
     background-color: transparent;
     color: greenyellow;
     border-radius: 5px;
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 20%;
+    margin-right: 20%;
     font-weight: bold;
 }
 .cantidad {
@@ -25,12 +25,14 @@
 }
 .aniadir {
     margin-bottom: 10px;
-    margin-top: 3%;
+    margin-top: 1%;
     color: greenyellow;
     background-color: transparent;
     border: solir;
     border-color: greenyellow;
     border-radius: 5px;
+    border-width: 3px;
     padding: 5px;
     font-size: 15px;
+    font-weight: bold;
 }

@@ -9,6 +9,7 @@
     margin-left: 5%;
     margin-right: 5%;
     margin-top: 40px;
+    margin-bottom: 40px;
     display: inline-block;
 }
 
@@ -22,6 +23,8 @@
 .dolarPrecio {
     font-size: 25px;
     color: greenyellow;
+    margin-bottom: 10px;
+    margin-top: 5px;
 }
 
 .dolarFoto {

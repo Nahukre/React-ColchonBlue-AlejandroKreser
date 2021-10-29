@@ -1,0 +1,52 @@
+.inversiones_detail {
+  padding-bottom: 30px;
+  text-align: center;
+  background-color: #282c34;
+}
+.activo__dolarBlue {
+  background-color: #6e9cff;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border: solid;
+  border-width: 3px;
+  border-color: black;
+  display: inline-block;
+  width: 60%;
+  text-align: center;
+  padding: 10px;
+}
+.activo__dolarBlue:hover {
+background-color: #548aff;
+}
+
+.dolarBlue__nombre {
+  text-align: center;
+  padding-bottom: 20px;
+  font-size: 40px;
+}
+
+.activo__foto {
+  width: 70%;
+  height: 310px;
+  border-radius: 500px;
+}
+
+.activo__info {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-weight: bold;
+  font-size: 20px;
+}
+.nivelRiesgo {
+  padding-bottom: 15px;
+  font-size: 18px;
+}
+
+.activo__valor {
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 5px;
+  margin-top: -10px;
+}
