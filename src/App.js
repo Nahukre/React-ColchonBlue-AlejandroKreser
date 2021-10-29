@@ -4,6 +4,7 @@ import { NavBar } from "./components/NavBar/NavBar";
 import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { ItemDetailContainer} from "./components/ItemDetailContainer/ItemDetailContainer";
+
 function App() {
 
   return (
@@ -13,8 +14,7 @@ function App() {
         <Route exact path="/">
           <div className="App">
             <ItemListContainer />
-            <ItemDetailContainer />
-            <header className="App-header">
+            {/* <header className="App-header">
               <img src={logo} className="App-logo" alt="logo" />
                 <p>
                   {" "}
@@ -24,8 +24,13 @@ function App() {
             rel="noopener noreferrer">
             {" "} Learn React{" "}
             </a>{" "}
-            </header>{" "}
+            </header>{" "} */}
           </div>
+        </Route>
+        <Route exact path="/inversiones/:id">
+          <div className="App">
+            <ItemDetailContainer />
+          </div>  
         </Route>
       </Switch>
     </BrowserRouter>

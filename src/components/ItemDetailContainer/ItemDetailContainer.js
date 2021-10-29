@@ -15,7 +15,7 @@ export const ItemDetailContainer = () => {
             } else {
                 reject("No se encontró nada");
             }
-        },3000)
+        },2000)
     });
 
     useEffect(() => {
