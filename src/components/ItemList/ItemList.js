@@ -1,13 +1,14 @@
 import React from "react";
 import { Item } from "../Item/Item";
+import Loading from "../Loader/Loader";
 
 export const ItemList = ({inversionesListado}) => {
     return (
         <>
         <div className="ItemList">
-        {inversionesListado.map((inversiones, id) => {
+        {inversionesListado.length ? inversionesListado.map((inversiones, id) => {
             return <Item inversiones={inversiones} key={id} />;
-        })}
+        }) : <Loading/>}
         </div>
         </>
     );
