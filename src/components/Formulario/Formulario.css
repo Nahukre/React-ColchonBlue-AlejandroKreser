@@ -1,0 +1,124 @@
+
+.pagina {
+    background-color: #282c34;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    min-height: 519px;
+    font-family: sans-serif;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    text-align: center;}
+.contenedor__titulo2 {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-top: -5px;
+    border-bottom: solid;
+    border-color: black;
+}
+fieldset {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 5px;
+    padding-bottom: 0px;
+    padding-top: 20px;
+    background-color: rgba(84, 138, 255, 0.7);
+}
+.motivo {
+    padding-top: 20px;
+}
+select {
+    font-size: 12px;
+    border-radius: 5px;
+}
+textarea {
+    border-radius: 5px;
+}
+textarea:focus {
+    font-size: 16px;
+    border-radius: 5px;
+    -webkit-transform: translate(20px, 0px);
+            transform: translate(20px, 0px);
+    min-width: 510px;
+    min-height: 200px;
+}
+.consulta {
+    vertical-align: super;
+    margin-bottom: 10px;
+}
+.consulta2 {
+    margin-top: 20px;
+}
+.botones {
+    font-family: sans-serif;
+    color: black;
+    border: solid;
+    border-color: black;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 2px;
+    margin-bottom: 15px;
+    margin-left: 20px;
+    background-color: greenyellow;
+}
+.botones:hover {
+    background-color: #548aff;
+    color: black;
+}
+.formulario {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    line-height: 10px;
+    text-align: left;
+}
+.formularioNovedades {
+    margin: 10px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    font-size: 20px;
+    padding: 10px;
+}
+div.checkbox {
+    margin-left: 0px;
+    font-size: 20px;
+    margin-right: 10px;
+}
+.checkbox {
+    display: inline;
+    font-size: 25px;
+    margin-left: 17px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.input-group {
+    display: block;
+}
+select {
+    font-size: 20px;
+}
+label {
+    font-size: 20px;
+    padding: 2px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+input {
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-right: 5px;
+    border-radius: 5px;
+}

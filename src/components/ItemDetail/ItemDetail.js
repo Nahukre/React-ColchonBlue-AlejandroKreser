@@ -7,17 +7,17 @@ export const ItemDetail = ({inversiones}) => {
     return (
         <>
         <div className="inversiones_detail">
-        <div className= "activo__dolarBlue" id={inversiones.denominacion}>
-            <h2 className="dolarBlue__nombre">{inversiones.denominacion}</h2>
-            <img className="activo__foto" src={inversiones.foto} alt={inversiones.descripcion} width= "100px" height= "100px"/>
-            <p className="activo__info">{inversiones.descripcion}</p>
-            <h4 className="nivelRiesgo">{inversiones.nivelRiesgo}</h4>
-            <p className="activo__valor">Valor: ${inversiones.valor}</p>
-            <div>
-                <ItemCount initial={1} stock={inversiones.stock}/>
+            <div className= "activo__dolarBlue" id={inversiones.to}>
+                <h2 className="dolarBlue__nombre">{inversiones.denominacion}</h2>
+                <img className="activo__foto" src={inversiones.foto} alt={inversiones.descripcion} width= "100px" height= "100px"/>
+                <p className="activo__info">{inversiones.descripcion}</p>
+                <h4 className="nivelRiesgo">{inversiones.nivelRiesgo}</h4>
+                <p className="activo__valor">Valor: ${inversiones.valor}</p>
+                <div>
+                    <ItemCount initial={1} stock={inversiones.stock}/>
+                </div>
             </div>
-        </div>
-        </div>
+        </div>  
         </>
     );
 };

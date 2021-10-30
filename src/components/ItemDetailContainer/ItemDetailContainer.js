@@ -20,7 +20,7 @@ export const ItemDetailContainer = () => {
     });
 
     useEffect(() => {
-        getData(inversiones/{inversionesId})
+        getData(inversiones)
             .then(res => setProductos(res))
             .catch(err => console.log(err))
     }, [inversionesId]);

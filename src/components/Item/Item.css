@@ -38,4 +38,11 @@
 .mas {
     width: 30px;
     height: 30px;
+    position: absolute;
+    margin-left: -3%;
+    margin-top: 14.8%;
+}
+
+.mas:hover {
+    transform: scale(1.2);
 }

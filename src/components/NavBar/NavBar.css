@@ -75,24 +75,21 @@
     color: #053191;
 }
 
-ul.menu__items--font li {
+ul.menu__items--font .item {
     position: relative;
     margin-left: 15px;
     margin-top: -45px;
     font-size: 30px;
     display: inline-block;
     vertical-align: middle;  
-}
-
-ul.menu__items--font li a {
     color: greenyellow;
     text-decoration: none;
 }
-ul.menu__items--font li a:hover {
+ul.menu__items--font .item:hover {
     color: rgb(67, 95, 25);
 }
 
-li {
+.Item {
     position: relative;
     display: inline-block;
 }
@@ -103,12 +100,4 @@ li li.item {
     border-color: black;
     height: 50px;
 }
-#active {
-    border-bottom: solid;
-    border-color: greenyellow;
-    border-width: 5px;
-    width: 95%;  
-}
-#active:hover {
-    border-color: rgb(67, 95, 25);
-}
+

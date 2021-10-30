@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import colchon from "../../img/colchon.png";
 import { CartWidget } from "../CartWidget/CartWidget";
 import "./NavBar.css";
@@ -15,9 +16,9 @@ export const NavBar = () => {
         </header>
         <nav>
             <ul className="menu__items--font">
-                <li className="item"><a href="index.js" id="active">Home</a></li>
-                <li className="item"><a href="Page/Inversiones.html">Inversiones</a></li>
-                <li className="item"><a href="Page/Contacto.html">Contacto</a></li>
+                <NavLink activeClassName="active" className="item" to="/">Home </NavLink>
+                <NavLink activeClassName="active" className="item" to="/Inversiones">Inversiones</NavLink>
+                <NavLink activeClassName="active" className="item" to="/Contacto">Contacto</NavLink>
                 <CartWidget/>
             </ul>
         </nav>

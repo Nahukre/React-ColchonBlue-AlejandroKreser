@@ -6,7 +6,7 @@ export const ItemDetailList = ({inversionesListado}) => {
         <>
         <div className="ItemDetail">
         {inversionesListado.map((inversiones, id) => {
-            return <ItemDetail inversiones={inversiones} key={id} />;
+            return <ItemDetail inversiones={inversiones} key={inversiones.id} />;
         })}
         </div>
         </>

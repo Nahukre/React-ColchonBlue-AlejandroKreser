@@ -3,7 +3,9 @@ import "./App.css";
 import { NavBar } from "./components/NavBar/NavBar";
 import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { ItemDetailContainer} from "./components/ItemDetailContainer/ItemDetailContainer";
+import { Contacto } from "./pages/Contacto/Contacto";
+import Inversiones from "./pages/Inversiones/Inversiones";
+import { Footer } from "./components/Footer/Footer";
 
 function App() {
 
@@ -27,12 +29,18 @@ function App() {
             </header>{" "} */}
           </div>
         </Route>
-        <Route exact path="/inversiones/:inversionesId">
+        <Route exact path="/Inversiones">
           <div className="App">
-            <ItemDetailContainer />
+            <Inversiones />
+          </div>  
+        </Route>
+        <Route exact path="/Contacto">
+          <div className="App">
+            <Contacto />
           </div>  
         </Route>
       </Switch>
+      <Footer />
     </BrowserRouter>
     </>
   );
