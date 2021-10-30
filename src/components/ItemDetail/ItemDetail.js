@@ -3,6 +3,7 @@ import {ItemCount} from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
 
 export const ItemDetail = ({inversiones}) => {
+
     return (
         <>
         <div className="inversiones_detail">

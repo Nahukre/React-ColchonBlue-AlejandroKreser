@@ -27,7 +27,7 @@ function App() {
             </header>{" "} */}
           </div>
         </Route>
-        <Route exact path="/inversiones/:id">
+        <Route exact path="/inversiones/:inversionesId">
           <div className="App">
             <ItemDetailContainer />
           </div>  
