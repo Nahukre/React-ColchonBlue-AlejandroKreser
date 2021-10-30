@@ -6,6 +6,8 @@
     border-color: black;
     border-width: 10px;
     text-align: center;
+    z-index: 100;
+    position: relative;
     padding-top: 5px;
     padding-bottom: 10px;
     -webkit-box-ordinal-group: 1001;
@@ -18,4 +20,5 @@ img.pie__redes {
     height: 30px;
     margin-right: 2px;
     margin-left: 2px;
+    z-index: 100;
 }

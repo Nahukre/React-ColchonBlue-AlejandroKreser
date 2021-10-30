@@ -8,15 +8,18 @@
   background-color: #6e9cff;
   border-radius: 5px;
   margin-top: 20px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 3%;
   border: solid;
   border-width: 3px;
   border-color: black;
   display: inline-block;
-  width: 60%;
+  width: 80%;
   text-align: center;
   padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .activo__dolarBlue:hover {
 background-color: #548aff;
@@ -29,7 +32,7 @@ background-color: #548aff;
 }
 
 .activo__foto {
-  width: 70%;
+  width: 60%;
   height: 310px;
   border-radius: 500px;
 }

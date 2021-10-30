@@ -16,9 +16,9 @@ export const NavBar = () => {
         </header>
         <nav>
             <ul className="menu__items--font">
-                <NavLink activeClassName="active" className="item" to="/">Home </NavLink>
-                <NavLink activeClassName="active" className="item" to="/Inversiones">Inversiones</NavLink>
-                <NavLink activeClassName="active" className="item" to="/Contacto">Contacto</NavLink>
+                <NavLink activeClassName="active" className="item"  to="/">Home </NavLink>
+                <NavLink activeClassName="active" className="item"  to="/Inversiones">Inversiones</NavLink>
+                <NavLink activeClassName="active" className="item"  to="/Contacto">Contacto</NavLink>
                 <CartWidget/>
             </ul>
         </nav>

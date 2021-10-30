@@ -14,6 +14,7 @@
     width: 100%;
     z-index: 100;
     text-align: center;
+    position: relative;
 }
 
 .encabezado__logo {
@@ -41,6 +42,7 @@
     padding-bottom: 0;
     letter-spacing: 0.1em;
     word-spacing: 0.3em;
+    z-index: 100;
 }
 
 .encabezado__subnombre {
@@ -53,6 +55,7 @@
     text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
     letter-spacing: 0.2em;
     word-spacing: 0.25em;
+    z-index: 100;
 }
 
 .menu__items--font {
@@ -68,6 +71,7 @@
     border-color: black;
     position: sticky;
     margin: 0px;
+    z-index: 100;
     
 }
 

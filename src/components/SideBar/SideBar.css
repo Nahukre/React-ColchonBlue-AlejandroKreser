@@ -1,0 +1,43 @@
+.sidebar {
+    /* background-color: greenyellow; */
+    padding: 1px;
+    /* border-right: solid;
+    border-color: black; */
+    position: fixed;
+    /* top: 0; */
+    width: 10%;
+    height: 10%;
+    margin-top: 5%;
+    /* padding-top: 14.5%; */
+    /* justify-content: space-around;
+    display: flex; */
+    
+}
+
+.sidebarDerecha {
+    padding: 1px;
+    position: fixed;
+    right: 2px;
+    width: 10%;
+    height: 10%;
+    margin-top: 0.8%;
+    margin-bottom: 50px;
+}
+.SideContenedor {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.SideFoto {
+    width: 130px;
+    height: 75px;
+    border-radius: 50%;
+
+    
+}
+
+.SideNombre {
+    color: white;
+    font-weight: bold;
+}
