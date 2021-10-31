@@ -2,20 +2,19 @@ import React from "react";
 import {ItemCount} from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
 
-
-export const ItemDetail = ({inversiones}) => {
+export const ItemDetail = ({to, denominacion, foto, descripcion, nivelRiesgo, valor, stock}) => {
 
     return (
         <>
-        <div className="inversiones_detail" id={inversiones.to}>
+        <div className="inversiones_detail" id={to}>
             <div className= "activo__dolarBlue">
-                <h2 className="dolarBlue__nombre">{inversiones.denominacion}</h2>
-                <img className="activo__foto" src={inversiones.foto} alt={inversiones.descripcion} width= "100px" height= "100px"/>
-                <p className="activo__info">{inversiones.descripcion}</p>
-                <h4 className="nivelRiesgo">{inversiones.nivelRiesgo}</h4>
-                <p className="activo__valor">Valor: ${inversiones.valor}</p>
+                <h2 className="dolarBlue__nombre">{denominacion}</h2>
+                <img className="activo__foto" src={foto} alt={descripcion} width= "100px" height= "100px"/>
+                <p className="activo__info">{descripcion}</p>
+                <h4 className="nivelRiesgo">{nivelRiesgo}</h4>
+                <p className="activo__valor">Valor: ${valor}</p>
                 <div>
-                    <ItemCount initial={1} stock={inversiones.stock}/>
+                    <ItemCount initial={1} stock={stock}/>
                 </div>
             </div>
         </div>  
