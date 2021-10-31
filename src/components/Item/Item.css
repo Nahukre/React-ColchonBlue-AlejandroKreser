@@ -24,7 +24,7 @@
     font-size: 25px;
     color: greenyellow;
     margin-bottom: 10px;
-    margin-top: 5px;
+    margin-top: 0px;
 }
 
 .dolarFoto {
@@ -45,4 +45,18 @@
 
 .mas:hover {
     transform: scale(1.2);
+}
+
+.detalle {
+    background-color: greenyellow;
+    border: solid;
+    border-color:greenyellow;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    padding: 3px;
+    font-weight: bold;
+}
+.detalle:hover {
+    transform: scale(1.1);
 }

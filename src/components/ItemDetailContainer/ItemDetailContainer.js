@@ -2,6 +2,7 @@ import { ItemDetail } from "../ItemDetail/ItemDetail";
 import { inversiones } from "../../services/inversiones";
 import React, { useEffect, useState } from "react";
 import Loading from "../Loader/Loader";
+import { useParams } from "react-router";
 
 
     const getItems = new Promise((res, rej) => {
@@ -10,23 +11,27 @@ import Loading from "../Loader/Loader";
         }, 3000);
     });
 
-    const ItemDetailContainer = () => {
+    export const ItemDetailContainer = () => {
+    const {inversionesId} = useParams();   
     const [itemDetail, setItemDetail] = useState();
+
+    console.log(inversionesId);
 
     useEffect(() => {
         getItems.then((res) => {
         setItemDetail(res[0]);
     });
-    }, []);
+    }, [inversionesId]);
     console.log(itemDetail);
+    console.log(inversiones);
 
-    if (!inversiones) return null;
+    if (!itemDetail) return null;
     return (
         <>{itemDetail === undefined ? (
             <Loading/>
         ) : (
         <div className="ItemDetailContainer">
-            <ItemDetail denominacion={itemDetail.denominacion} descripcion={itemDetail.descripcion} foto={itemDetail.foto} nivelRiesgo={itemDetail.nivelRiesgo} valor={itemDetail.valor} stock={itemDetail.stock} to={itemDetail.to} key={1}/>
+            <ItemDetail denominacion={itemDetail.denominacion} descripcion={itemDetail.descripcion} foto={itemDetail.foto} nivelRiesgo={itemDetail.nivelRiesgo} valor={itemDetail.valor} stock={itemDetail.stock} to={itemDetail.to} key={0}/>
         </div>
         )}
         </>
