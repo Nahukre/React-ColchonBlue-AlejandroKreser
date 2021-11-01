@@ -10,7 +10,7 @@ import bitcoin from "../img/bitcoin.jpg";
 
 export const inversiones = [
     {
-            "id": 1,
+            "id": 0,
             "denominacion": "Dolar solidario",
             "nivelRiesgo": "Activo recomendado para inversores conservadores",
             "valor": 170,
@@ -20,7 +20,7 @@ export const inversiones = [
             "to": "dolarSolidario",
         },
         {
-            "id": 2,
+            "id": 1,
             "denominacion": "Dolar bolsa",
             "nivelRiesgo": "Activo recomendado para inversores conservadores",
             "valor": 175,
@@ -30,7 +30,7 @@ export const inversiones = [
             "to": "dolarBolsa",
         },
         {
-            "id": 3,
+            "id": 2,
             "denominacion": "Dolar blue",
             "nivelRiesgo": "Activo recomendado para inversores conservadores",
             "valor": 185,
@@ -40,7 +40,7 @@ export const inversiones = [
             "to": "dolarBlue",
         },
         {
-            "id": 4,
+            "id": 3,
             "denominacion": "Apple cedear",
             "nivelRiesgo": "Activo recomendado para inversores moderados",
             "valor": 3500,
@@ -50,7 +50,7 @@ export const inversiones = [
             "to": "appleCedear",
         },    
         {
-            "id": 5,
+            "id": 4,
             "denominacion": "Amazon cedear",
             "nivelRiesgo": "Activo recomendado para inversores moderados",
             "valor": 4500,
@@ -60,7 +60,7 @@ export const inversiones = [
             "to": "amazonCedear",
         },
         {
-            "id": 6,
+            "id": 5,
             "denominacion": "Tesla cedear",
             "nivelRiesgo": "Activo recomendado para inversores agresivos",
             "valor": 8000,
@@ -70,7 +70,7 @@ export const inversiones = [
             "to": "teslaCedear",
         },
         {
-            "id": 7,
+            "id": 6,
             "denominacion": "Oro",
             "nivelRiesgo": "Activo recomendado para inversores conservadores",
             "valor": 55700,
@@ -80,7 +80,7 @@ export const inversiones = [
             "to": "oro",
         },
         {
-            "id": 8,
+            "id": 7,
             "denominacion": "Ethereum",
             "nivelRiesgo": "Activo recomendado para inversores agresivos",
             "valor": 500000,
@@ -90,7 +90,7 @@ export const inversiones = [
             "to": "ethereum",
         },
         {
-            "id": 9,
+            "id": 8,
             "denominacion": "Bitcoin",
             "nivelRiesgo": "Activo recomendado para inversores agresivos",
             "valor": 8000000,

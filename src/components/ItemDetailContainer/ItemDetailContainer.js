@@ -19,7 +19,7 @@ import { useParams } from "react-router";
 
     useEffect(() => {
         getItems.then((res) => {
-        setItemDetail(res[0]);
+        setItemDetail(res[inversionesId]);
     });
     }, [inversionesId]);
     console.log(itemDetail);
