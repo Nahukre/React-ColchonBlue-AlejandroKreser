@@ -19,9 +19,13 @@ import { useParams } from "react-router";
 
     useEffect(() => {
         getItems.then((res) => {
-        setItemDetail(res[inversionesId]);
+            const itemToSet = res.filter((item) => {
+                return item.to === (inversionesId)
+            });
+        setItemDetail(itemToSet[0]);
     });
     }, [inversionesId]);
+
     console.log(itemDetail);
     console.log(inversiones);
 
@@ -31,7 +35,7 @@ import { useParams } from "react-router";
             <Loading/>
         ) : (
         <div className="ItemDetailContainer">
-            <ItemDetail denominacion={itemDetail.denominacion} descripcion={itemDetail.descripcion} foto={itemDetail.foto} nivelRiesgo={itemDetail.nivelRiesgo} valor={itemDetail.valor} stock={itemDetail.stock} to={itemDetail.to} key={0}/>
+            <ItemDetail {...itemDetail} key={0}/>
         </div>
         )}
         </>
