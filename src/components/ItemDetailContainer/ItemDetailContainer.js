@@ -20,7 +20,7 @@ import { useParams } from "react-router";
     useEffect(() => {
         getItems.then((res) => {
             const itemToSet = res.filter((item) => {
-                return item.id === (inversionesId)
+                return item.id === Number(inversionesId)
             });
         setItemDetail(itemToSet[0]);
     });
