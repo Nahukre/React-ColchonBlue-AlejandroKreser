@@ -16,9 +16,15 @@ export const NavBar = () => {
         </header>
         <nav>
             <ul className="menu__items--font">
-                <NavLink activeClassName="active" className="item"  to="/">Home </NavLink>
-                <NavLink activeClassName="active" className="item"  to="/Inversiones">Inversiones</NavLink>
-                <NavLink activeClassName="active" className="item"  to="/Contacto">Contacto</NavLink>
+                <li><NavLink activeClassName="active" className="item"  to="/">Home </NavLink>
+                    <ul>
+                        <li><NavLink activeClassName="active" className="subItem"  to="/category/tradicionales">Dolar y oro </NavLink></li>
+                        <li><NavLink activeClassName="active" className="subItem"  to="/category/acciones">Acciones </NavLink></li>
+                        <li><NavLink activeClassName="active" className="subItem"  to="/category/criptomonedas">Criptomonedas </NavLink></li>
+                    </ul>
+                </li>
+                <li><NavLink activeClassName="active" className="item"  to="/Inversiones">Inversiones</NavLink></li>
+                <li><NavLink activeClassName="active" className="item"  to="/Contacto">Contacto</NavLink></li>
                 <CartWidget/>
             </ul>
         </nav>

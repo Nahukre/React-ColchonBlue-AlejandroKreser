@@ -4,6 +4,7 @@ import { useState } from "react/cjs/react.development";
 import { inversiones } from "../../services/inversiones"
 import { useEffect } from "react";
 import { useParams } from "react-router";
+import Loading from "../Loader/Loader";
 
 export const ItemListContainer = () => {
     const {categoriaTo} = useParams();
@@ -29,10 +30,14 @@ export const ItemListContainer = () => {
     }, [categoriaTo]);
 
     return (
-        <><div className="ItemListContainer">
+        <>{ItemList === undefined ? (
+            <Loading/>
+        ): (
+        <div className="ItemListContainer">
             <Title text="Home"/>
             <ItemList inversionesListado={productos} />
         </div>
+        )}
         </>
     );
 }

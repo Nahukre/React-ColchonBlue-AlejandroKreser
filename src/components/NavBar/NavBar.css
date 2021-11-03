@@ -78,8 +78,11 @@
 .menu__items--font:hover {
     color: #053191;
 }
+ul .menu__items--font li ul li .subItem{
+    text-align: left;
+}
 
-ul.menu__items--font .item {
+ul.menu__items--font li .item {
     position: relative;
     margin-left: 15px;
     margin-top: -45px;
@@ -89,13 +92,22 @@ ul.menu__items--font .item {
     color: greenyellow;
     text-decoration: none;
 }
-ul.menu__items--font .item:hover {
+ul.menu__items--font li .item:hover {
     color: rgb(67, 95, 25);
 }
-
+li {
+    position: relative;
+    display: inline-block;
+}
 .Item {
     position: relative;
     display: inline-block;
+}
+
+nav li a {
+    text-decoration: none;
+    font-size: 20px;
+    color: greenyellow;
 }
 
 li li.item {
@@ -103,5 +115,21 @@ li li.item {
     border-top: solid;
     border-color: black;
     height: 50px;
+}
+
+ul li .item {
+    display: block;
+}
+ul li ul {
+    display:none;
+	position:absolute;
+}
+
+ul li:hover ul {
+    display:block;
+}
+
+ul li ul li {
+    position:relative;
 }
 

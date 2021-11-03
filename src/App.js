@@ -24,7 +24,7 @@ function App() {
             <ItemListContainer />
           </div>  
         </Route>
-        <Route exact path="/inversiones/:inversionesId">
+        <Route exact path="/item/:inversionesId">
           <div className="App">
             <ItemDetailContainer />
           </div>  
