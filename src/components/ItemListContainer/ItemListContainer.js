@@ -3,9 +3,10 @@ import { Title } from "../Title/Title";
 import { useState } from "react/cjs/react.development";
 import { inversiones } from "../../services/inversiones"
 import { useEffect } from "react";
+import { useParams } from "react-router";
 
 export const ItemListContainer = () => {
-
+    const {categoriaTo} = useParams();
     const [productos, setProductos] =useState([]);
     
     const getData = (data) =>
@@ -21,9 +22,11 @@ export const ItemListContainer = () => {
 
     useEffect(() => {
         getData(inversiones)
-            .then(res => setProductos(res))
+        .then((res) => {categoriaTo ?
+        setProductos(res.filter((inversiones) => inversiones.categoria === categoriaTo )) : setProductos(inversiones);
+        })
         .catch(err => console.log(err))
-    }, []);
+    }, [categoriaTo]);
 
     return (
         <><div className="ItemListContainer">

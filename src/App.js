@@ -19,6 +19,11 @@ function App() {
             <ItemListContainer />
           </div>
         </Route>
+        <Route exact path="/category/:categoriaTo">
+          <div className="App">
+            <ItemListContainer />
+          </div>  
+        </Route>
         <Route exact path="/inversiones/:inversionesId">
           <div className="App">
             <ItemDetailContainer />

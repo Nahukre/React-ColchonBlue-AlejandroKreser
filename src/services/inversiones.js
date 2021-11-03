@@ -18,6 +18,7 @@ export const inversiones = [
             "foto": dolar,
             "stock": 1000,
             "to": "dolarSolidario",
+            "categoria": "tradicionales",
         },
         {
             "id": 2,
@@ -28,6 +29,7 @@ export const inversiones = [
             "foto": dolarBolsa,
             "stock": 1000,
             "to": "dolarBolsa",
+            "categoria": "tradicionales",
         },
         {
             "id": 3,
@@ -38,6 +40,7 @@ export const inversiones = [
             "foto": dolarBlue,
             "stock": 1000,
             "to": "dolarBlue",
+            "categoria": "tradicionales",
         },
         {
             "id": 4,
@@ -48,6 +51,7 @@ export const inversiones = [
             "foto": apple,
             "stock": 1000,
             "to": "appleCedear",
+            "categoria": "acciones",
         },    
         {
             "id": 5,
@@ -58,6 +62,7 @@ export const inversiones = [
             "foto": amazon,
             "stock": 1000,
             "to": "amazonCedear",
+            "categoria": "acciones",
         },
         {
             "id": 6,
@@ -68,6 +73,7 @@ export const inversiones = [
             "foto": tesla,
             "stock": 1000,
             "to": "teslaCedear",
+            "categoria": "acciones",
         },
         {
             "id": 7,
@@ -78,6 +84,7 @@ export const inversiones = [
             "foto": oro,
             "stock": 1000,
             "to": "oro",
+            "categoria": "tradicionales",
         },
         {
             "id": 8,
@@ -88,6 +95,7 @@ export const inversiones = [
             "foto": ethereum,
             "stock": 1000,
             "to": "ethereum",
+            "categoria": "criptomonedas",
         },
         {
             "id": 9,
@@ -98,6 +106,7 @@ export const inversiones = [
             "foto": bitcoin,
             "stock": 1000,
             "to": "bitcoin",
+            "categoria": "criptomonedas",
         }
 
     ]
