@@ -1,3 +1,4 @@
+/* navBar estilos */
 .encabezado__index {
     background-color: greenyellow;
     margin: 0px;
@@ -111,8 +112,7 @@ nav ul li ul a {
     text-align: left;
     position: relative;
     display: inline;
-    margin: auto;
-    z-index: 2;
+
 }
 
 li li.item {
@@ -136,9 +136,5 @@ ul li:hover ul {
 
 ul li ul li {
     position:relative;
-}
-
-.subItem {
-    margin-left: -100px;
 }
 
