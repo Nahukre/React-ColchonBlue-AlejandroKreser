@@ -14,6 +14,7 @@ export const NavBar = () => {
                 <div className="encabezado__subnombre">finanzas personales</div>
             </div>
         </header>
+        <div className="contenedorNav">
         <nav>
             <ul className="menu__items--font">
                 <li><NavLink activeClassName="active" className="item"  to="/">Home </NavLink>
@@ -28,6 +29,7 @@ export const NavBar = () => {
                 <CartWidget/>
             </ul>
         </nav>
+        </div>
         </>
     );
 }

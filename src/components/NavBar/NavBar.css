@@ -1,4 +1,3 @@
-/* navBar estilos */
 .encabezado__index {
     background-color: greenyellow;
     margin: 0px;
@@ -76,9 +75,7 @@
 
 .menu__items--font:hover {
     color: #053191;
-}
-ul .menu__items--font li ul li .subItem{
-    text-align: left;
+    transition: all 1s;
 }
 
 ul.menu__items--font li .item {
@@ -91,14 +88,12 @@ ul.menu__items--font li .item {
     color: greenyellow;
     text-decoration: none;
 }
+
 ul.menu__items--font li .item:hover {
     color: rgb(67, 95, 25);
 }
+
 li {
-    position: relative;
-    display: inline-block;
-}
-.Item {
     position: relative;
     display: inline-block;
 }
@@ -107,34 +102,40 @@ nav li a {
     text-decoration: none;
     font-size: 20px;
     color: greenyellow;
-}
-nav ul li ul a {
-    text-align: left;
-    position: relative;
-    display: inline;
-
-}
-
-li li.item {
-    border-bottom: solid;
-    border-top: solid;
-    border-color: black;
-    height: 50px;
+    border-radius: 5px;
+    border: solid;
+    border-width: 1px;
+    border-color: greenyellow;
+    padding: 3px;
 }
 
-ul li .item {
-    display: block;
+nav li ul {
+    background-color: transparent;
 }
+nav li ul li {
+    margin-bottom: 15px;
+}
+nav li ul li a {
+    margin-left: 15px;
+    background-color: #548aff;
+    border-radius: 5px;
+    border: solid;
+    border-width: 1px;
+    border-color: greenyellow;
+    padding: 3px;
+}
+nav li ul li a:hover {
+    color: rgb(67, 95, 25);
+}
+
 ul li ul {
     display:none;
 	position:absolute;
+    text-align: left;
 }
 
 ul li:hover ul {
     display:block;
 }
 
-ul li ul li {
-    position:relative;
-}
 

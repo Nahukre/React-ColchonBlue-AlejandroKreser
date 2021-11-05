@@ -1,4 +1,3 @@
-// import logo from "./logo.svg";
 import "./App.css";
 import { NavBar } from "./components/NavBar/NavBar";
 import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
@@ -7,6 +6,8 @@ import { Contacto } from "./pages/Contacto/Contacto";
 import Inversiones from "./pages/Inversiones/Inversiones";
 import { Footer } from "./components/Footer/Footer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import { CartContext } from "./contexts/cartContext";
+
 
 function App() {
 
@@ -40,6 +41,7 @@ function App() {
           </div>  
         </Route>
       </Switch>
+      {/* <CartContext.Provider /> */}
       <Footer />
     </BrowserRouter>
     </>
