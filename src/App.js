@@ -6,7 +6,7 @@ import { Contacto } from "./pages/Contacto/Contacto";
 import Inversiones from "./pages/Inversiones/Inversiones";
 import { Footer } from "./components/Footer/Footer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
-import { CartContext } from "./contexts/cartContext";
+// import { CartContext } from "./contexts/cartContext";
 
 
 function App() {
