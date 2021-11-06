@@ -24,8 +24,8 @@ export const NavBar = () => {
                         <li><NavLink activeClassName="active" className="subItem"  to="/category/criptomonedas">Criptomonedas </NavLink></li>
                     </ul>
                 </li>
-                <li><NavLink activeClassName="active" className="item"  to="/Inversiones">Inversiones</NavLink></li>
-                <li><NavLink activeClassName="active" className="item"  to="/Contacto">Contacto</NavLink></li>
+                <li><NavLink activeClassName="active" className="item"  to="/inversiones">Inversiones</NavLink></li>
+                <li><NavLink activeClassName="active" className="item"  to="/contacto">Contacto</NavLink></li>
                 <CartWidget/>
             </ul>
         </nav>

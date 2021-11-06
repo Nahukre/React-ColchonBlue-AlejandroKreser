@@ -1,6 +1,6 @@
-import React from "react";
 import {ItemCount} from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
+
 
 export const ItemDetail = ({to, denominacion, foto, descripcion, nivelRiesgo, valor, stock}) => {
 
@@ -17,9 +17,10 @@ export const ItemDetail = ({to, denominacion, foto, descripcion, nivelRiesgo, va
                     <ItemCount initial={1} stock={stock}/>
                 </div>
             </div>
-        </div>  
+        </div> 
         </>
     );
 };
+
 
 export default ItemDetail;
