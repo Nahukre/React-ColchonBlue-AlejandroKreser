@@ -10,7 +10,6 @@
 //         setIsDarkMode(!isDarkMode);
 //     }
 
-
 //     return (
 //         <CartContext.Provider value={{isDarkMode, SwitchDarkMode}}>
 //         </CartContext.Provider>

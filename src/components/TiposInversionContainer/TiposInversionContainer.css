@@ -51,11 +51,12 @@
     background-color: #282c34;
     color: greenyellow;
     border: solid;
-    border-color: #282c34;
+    border-color: greenyellow;
+    border-width: 1px;
     border-radius: 5px;
     margin-bottom: 10px;
-    font-size: 15px;
-    padding: 3px;
+    font-size: 18px;
+    padding: 5px;
     font-weight: bold;
     margin-top: 10px;
 }

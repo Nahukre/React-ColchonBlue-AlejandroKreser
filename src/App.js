@@ -6,6 +6,7 @@ import { Contacto } from "./pages/Contacto/Contacto";
 import Inversiones from "./pages/Inversiones/Inversiones";
 import { Footer } from "./components/Footer/Footer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import Cart from "./components/Cart/Cart";
 // import { CartContext } from "./contexts/cartContext";
 
 
@@ -38,6 +39,11 @@ function App() {
         <Route exact path="/contacto">
           <div className="App">
             <Contacto />
+          </div>  
+        </Route>
+        <Route exact path="/cart">
+          <div className="App">
+            <Cart />
           </div>  
         </Route>
       </Switch>

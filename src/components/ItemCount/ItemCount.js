@@ -1,10 +1,16 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import Modal from "../Modal/Modal";
+import { useModal } from "../Modal/useModal";
 import "./ItemCount.css";
+import {inversiones} from "../../services/inversiones";
 
 
 export const ItemCount  = ({stock, initial}) => {
-    
+    const [isOpenModal1, openModal1, closeModal1] = useModal(false);
     const [counter, setCounter] = useState(initial);
+
+    const carrito = inversiones.valor * counter;
 
     const resta = () => {
         if(counter > 1) {
@@ -19,7 +25,9 @@ export const ItemCount  = ({stock, initial}) => {
         setCounter(counter);
     };
     const onAdd = () => {
-        console.log(counter)
+        
+        console.log(counter);
+        console.log(carrito);
     };
 
     return (
@@ -29,8 +37,13 @@ export const ItemCount  = ({stock, initial}) => {
                 <button className="botonesContador" onClick={suma}>+</button>
         </div>
         <div>
-            <button className="aniadir" onClick={onAdd}>Añadir al carrito</button>
-        </div></>
+            <button className="aniadir" onClick={(onAdd, openModal1)}>Añadir al carrito</button>
+        </div>
+        <Modal isOpen= {isOpenModal1} closeModal= {closeModal1}>
+            <Link to="/"><button className="botonesModal">Seguir comprando</button></Link>
+            <Link to="/cart"><button className="botonesModal">Finalizar compra</button></Link>
+        </Modal>
+        </>
     
     );
 }
