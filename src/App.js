@@ -7,16 +7,18 @@ import Inversiones from "./pages/Inversiones/Inversiones";
 import { Footer } from "./components/Footer/Footer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import Cart from "./components/Cart/Cart";
-import { CartContext } from "./contexts/cartContext";
+import CartProvider from "./contexts/CartProvider";
+
+
 
 function App() {
 
   return (
     <>
     <BrowserRouter>
-    <CartContext.Provider value={[]}>
       <NavBar />
       <Switch>
+      <CartProvider>
         <Route exact path="/">
           <div className="App">
             <ItemListContainer />
@@ -47,9 +49,9 @@ function App() {
             <Cart />
           </div>  
         </Route>
+      </CartProvider>
       </Switch>
       <Footer />
-      </CartContext.Provider>
     </BrowserRouter>
     </>
   );

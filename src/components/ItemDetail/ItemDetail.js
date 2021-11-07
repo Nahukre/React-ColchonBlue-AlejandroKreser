@@ -3,7 +3,7 @@ import "./ItemDetail.css";
 
 
 export const ItemDetail = ({to, denominacion, foto, descripcion, nivelRiesgo, valor, stock}) => {
-
+    
     return (
         <>
         <div className="inversiones_detail" id={to}>

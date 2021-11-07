@@ -5,6 +5,8 @@ import Loading from "../Loader/Loader";
 import { useParams } from "react-router";
 
 
+
+
     const getItems = new Promise((res, rej) => {
         setTimeout(() => {
         res(inversiones);
