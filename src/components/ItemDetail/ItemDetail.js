@@ -5,26 +5,26 @@ import "./ItemDetail.css";
 
 
 export const ItemDetail = ({to, denominacion, foto, descripcion, nivelRiesgo, valor, stock}) => {
-    const { AddToCart } = useContext(CartContext);
-    const [cart, setCart] = useState([]);
+    // const { AddToCart } = useContext(CartContext);
+    // const [cart, setCart] = useState([]);
 
 
-    const onAdd = (quantityToAdd) => {
+    // const onAdd = (quantityToAdd) => {
 
-    }
+    // }
 
-    const addToCart = (item, quantity) => {
-        const isInCart = cart.find(x => x.producto.id === item.id)
+    // const addToCart = (item, quantity) => {
+    //     const isInCart = cart.find(x => x.producto.id === item.id)
 
-        if (isInCart) {
-            let nuevaCantidad = isInCart.cantidad + counter;
-            let posicion = cart.indexof(isInCart);
-            cart[posicion].cantidad = nuevaCantidad;
-            setCart(cart);
-        } else{
-            setCart([...cart, {producto: item, cantidad: quantity}]);
-        }
-    }
+    //     if (isInCart) {
+    //         let nuevaCantidad = isInCart.cantidad + counter;
+    //         let posicion = cart.indexof(isInCart);
+    //         cart[posicion].cantidad = nuevaCantidad;
+    //         setCart(cart);
+    //     } else{
+    //         setCart([...cart, {producto: item, cantidad: quantity}]);
+    //     }
+    // }
   
 
 
@@ -39,7 +39,7 @@ export const ItemDetail = ({to, denominacion, foto, descripcion, nivelRiesgo, va
                 <h4 className="nivelRiesgo">{nivelRiesgo}</h4>
                 <p className="activo__valor">Valor: ${valor}</p>
                 <div>
-                    <ItemCount initial={1} stock={stock} onAdd={OnAdd} onClick={x => addToCart(item, counter)}/> 
+                    <ItemCount initial={1} stock={stock} /> 
                 </div>
             </div>
         </div> 
@@ -49,3 +49,5 @@ export const ItemDetail = ({to, denominacion, foto, descripcion, nivelRiesgo, va
 
 
 export default ItemDetail;
+
+// onAdd={OnAdd} onClick={x => addToCart(item, counter)}
