@@ -16,9 +16,9 @@ function App() {
   return (
     <>
     <BrowserRouter>
+    <CartContext>
       <NavBar />
       <Switch>
-      <CartContext>
         <Route exact path="/">
           <div className="App">
             <ItemListContainer />
@@ -49,9 +49,9 @@ function App() {
             <Cart />
           </div>  
         </Route>
-      </CartContext>
       </Switch>
       <Footer />
+      </CartContext>
     </BrowserRouter>
     </>
   );
