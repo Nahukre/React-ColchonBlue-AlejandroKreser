@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { CartContext } from "../../contexts/cartContext";
 import Modal from "../Modal/Modal";
 import { useModal } from "../Modal/useModal";
 import "./ItemCount.css";
@@ -9,7 +8,6 @@ import "./ItemCount.css";
 export const ItemCount  = ({stock, initial}) => {
     const [isOpenModal1, openModal1, closeModal1] = useModal(false);
     const [counter, setCounter] = useState(initial);
-    const { AddToCart } = useContext(CartContext);
 
     const resta = () => {
         if(counter > 1) {
@@ -33,7 +31,6 @@ export const ItemCount  = ({stock, initial}) => {
         onAdd();
         resetCounter();
         openModal1();
-        AddToCart();
     }
     return (
         <><div className="contador">

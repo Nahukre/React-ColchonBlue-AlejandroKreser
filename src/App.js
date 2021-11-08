@@ -7,7 +7,7 @@ import Inversiones from "./pages/Inversiones/Inversiones";
 import { Footer } from "./components/Footer/Footer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import Cart from "./components/Cart/Cart";
-import CartProvider from "./contexts/CartProvider";
+import { CartContext } from "./contexts/cartContext";
 
 
 
@@ -18,7 +18,7 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Switch>
-      <CartProvider>
+      <CartContext>
         <Route exact path="/">
           <div className="App">
             <ItemListContainer />
@@ -49,7 +49,7 @@ function App() {
             <Cart />
           </div>  
         </Route>
-      </CartProvider>
+      </CartContext>
       </Switch>
       <Footer />
     </BrowserRouter>
