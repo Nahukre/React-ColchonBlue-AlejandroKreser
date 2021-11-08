@@ -7,7 +7,7 @@ import Inversiones from "./pages/Inversiones/Inversiones";
 import { Footer } from "./components/Footer/Footer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import Cart from "./components/Cart/Cart";
-import Provider, { CartContext } from "./contexts/cartContext";
+import Provider from "./contexts/cartContext";
 
 
 

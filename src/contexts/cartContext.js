@@ -4,7 +4,6 @@ import React, { useState } from "react";
 
 export const CartContext = createContext();
 
-
 const Provider = ({ children }) => {
     const [cartData, setCartData] = useState([]);
     console.log(cartData);

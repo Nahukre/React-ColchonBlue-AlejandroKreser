@@ -5,33 +5,42 @@ import { useModal } from "../Modal/useModal";
 import "./ItemCount.css";
 
 
-export const ItemCount  = ({stock, initial}) => {
+export const ItemCount  = ({stock, initial, addItem, counter, suma, resta, onAdd, resetCounter}) => {
     const [isOpenModal1, openModal1, closeModal1] = useModal(false);
-    const [counter, setCounter] = useState(initial);
-
-    const resta = () => {
-        if(counter > 1) {
-        setCounter(counter - 1)}
-        else 
-        setCounter(counter);
-    };
-    const suma = () => {
-        if (counter < stock){
-        setCounter(counter + 1)}
-        else
-        setCounter(counter);
-    };
-    const onAdd = () => {
-        console.log(counter);
-    };
-    const resetCounter = () => {
-        setCounter(counter - (counter - 1));      
-    };
+    // const [counter, setCounter] = useState(initial);
+    
+    
     const click = () => {
         onAdd();
         resetCounter();
         openModal1();
+        addItem();
     }
+
+    
+    // const resta = () => {
+    //     if(counter > 1) {
+    //     setCounter(counter - 1)}
+    //     else 
+    //     setCounter(counter);
+    // };
+    // const suma = () => {
+    //     if (counter < stock){
+    //     setCounter(counter + 1)}
+    //     else
+    //     setCounter(counter);
+    // };
+    // const onAdd = () => {
+    //     console.log(counter);
+    // };
+    // const resetCounter = () => {
+    //     setCounter(counter - (counter - 1));      
+    // };
+    // const click = () => {
+    //     onAdd();
+    //     resetCounter();
+    //     openModal1();
+    // }
     return (
         <><div className="contador">
                 <button className="botonesContador" onClick={resta}>-</button>

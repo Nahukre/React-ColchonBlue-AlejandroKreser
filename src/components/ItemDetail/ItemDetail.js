@@ -1,30 +1,60 @@
 import { useContext, useState } from "react";
 import { CartContext } from "../../contexts/cartContext";
 import {ItemCount} from "../ItemCount/ItemCount";
+import Modal from "../Modal/Modal";
 import "./ItemDetail.css";
 
+export const ItemDetail = ({to, denominacion, foto, descripcion, nivelRiesgo, valor, stock, id}) => {
+    const { AddToCart } = useContext(CartContext);
+    const [counter, setCounter] = useState(1);
+    // const [cartNumber, setCartNumber] = useState(0);
+    const [cart, setCart] = useState(0);
 
-export const ItemDetail = ({to, denominacion, foto, descripcion, nivelRiesgo, valor, stock}) => {
-    // const { AddToCart } = useContext(CartContext);
+    const resta = () => {
+        if(counter > 1) {
+        setCounter(counter - 1)}
+        else 
+        setCounter(counter);
+    };
+    const suma = () => {
+        if (counter < stock){
+        setCounter(counter + 1)}
+        else
+        setCounter(counter);
+    };
+    const onAdd = () => {
+        console.log(counter);
+    };
+    const resetCounter = () => {
+        setCounter(counter - (counter - 1));      
+    };
+    // const onAddCart = (counter) => {
+    //     setCartNumber(counter)
+    // }
+
+
     // const [cart, setCart] = useState([]);
-
-
+    
+    // const addProduct = () => {
+    //     AddToCart( denominacion, id, valor);
+    // };
     // const onAdd = (quantityToAdd) => {
 
     // }
 
-    // const addToCart = (item, quantity) => {
-    //     const isInCart = cart.find(x => x.producto.id === item.id)
+    const addItem = (item, quantity) => {
+        const isInCart = cart.find(x => x.producto.id === item.id)
 
-    //     if (isInCart) {
-    //         let nuevaCantidad = isInCart.cantidad + counter;
-    //         let posicion = cart.indexof(isInCart);
-    //         cart[posicion].cantidad = nuevaCantidad;
-    //         setCart(cart);
-    //     } else{
-    //         setCart([...cart, {producto: item, cantidad: quantity}]);
-    //     }
-    // }
+        if (isInCart) {
+            let nuevaCantidad = isInCart.cantidad + counter;
+            let posicion = cart.indexOf(isInCart);
+            cart[posicion].cantidad = nuevaCantidad;
+            setCart(cart);
+        } else{
+            setCart([...cart, {producto: item, cantidad: quantity}]);
+        }
+        console.log(cart);
+    }
   
 
 
@@ -39,7 +69,7 @@ export const ItemDetail = ({to, denominacion, foto, descripcion, nivelRiesgo, va
                 <h4 className="nivelRiesgo">{nivelRiesgo}</h4>
                 <p className="activo__valor">Valor: ${valor}</p>
                 <div>
-                    <ItemCount initial={1} stock={stock} /> 
+                    <ItemCount initial={1} stock={stock} counter={counter} addItem={addItem} suma={suma} resta={resta} value={{denominacion, id, valor}} AddToCart={AddToCart} onAdd={onAdd} resetCounter={resetCounter} /> 
                 </div>
             </div>
         </div> 
