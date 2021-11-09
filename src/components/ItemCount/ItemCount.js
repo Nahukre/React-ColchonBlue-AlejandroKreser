@@ -1,22 +1,39 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Modal from "../Modal/Modal";
 import { useModal } from "../Modal/useModal";
 import "./ItemCount.css";
 
 
-export const ItemCount  = ({stock, initial, addItem, counter, suma, resta, onAdd, resetCounter}) => {
+export const ItemCount  = ({stock, initial, onAddCart, quantity, AddToCart, id, denominacion, valor}) => {
     const [isOpenModal1, openModal1, closeModal1] = useModal(false);
-    // const [counter, setCounter] = useState(initial);
-    
+    const [counter, setCounter] = useState(initial);
     
     const click = () => {
         onAdd();
         resetCounter();
         openModal1();
-        addItem();
+        // AddToCart();
+        onAddCart(counter, denominacion, valor);
     }
-
+    const resta = () => {
+        if(counter > 1) {
+        setCounter(counter - 1)}
+        else 
+        setCounter(counter);
+    };
+    const suma = () => {
+        if (counter < stock){
+        setCounter(counter + 1)}
+        else
+        setCounter(counter);
+    };
+    const onAdd = () => {
+        console.log(counter);
+    };
+    const resetCounter = () => {
+        setCounter(counter - (counter - 1));      
+    };
     
     // const resta = () => {
     //     if(counter > 1) {
@@ -52,7 +69,7 @@ export const ItemCount  = ({stock, initial, addItem, counter, suma, resta, onAdd
         </div>
         <Modal isOpen= {isOpenModal1} closeModal= {closeModal1}>
             <Link to="/"><button className="botonesModal">Seguir comprando</button></Link>
-            <Link to="/cart"><button className="botonesModal">Finalizar compra</button></Link>
+            <Link to="/cart"><button className="botonesModal">Finalizar compra de {quantity} items</button></Link>
         </Modal>
         </>
     
