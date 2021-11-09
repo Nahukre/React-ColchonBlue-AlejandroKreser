@@ -9,8 +9,8 @@ export const ItemDetail = ({to, denominacion, foto, descripcion, nivelRiesgo, va
     
 
 
-    const onAddCart = (counter, denominacion, valor) => {
-        setCartNumber(counter, denominacion, valor)
+    const onAddCart = (counter) => {
+        setCartNumber(cartNumber + counter)
         
         console.log(counter)
     }

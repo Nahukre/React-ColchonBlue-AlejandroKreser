@@ -5,7 +5,7 @@ import { useModal } from "../Modal/useModal";
 import "./ItemCount.css";
 
 
-export const ItemCount  = ({stock, initial, onAddCart, quantity, AddToCart, id, denominacion, valor}) => {
+export const ItemCount  = ({stock, initial, onAddCart, quantity, AddToCart, value}) => {
     const [isOpenModal1, openModal1, closeModal1] = useModal(false);
     const [counter, setCounter] = useState(initial);
     
@@ -13,8 +13,8 @@ export const ItemCount  = ({stock, initial, onAddCart, quantity, AddToCart, id, 
         onAdd();
         resetCounter();
         openModal1();
-        // AddToCart();
-        onAddCart(counter, denominacion, valor);
+        AddToCart(value);
+        onAddCart(counter);
     }
     const resta = () => {
         if(counter > 1) {
