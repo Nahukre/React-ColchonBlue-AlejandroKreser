@@ -10,8 +10,8 @@ import { Link } from "react-router-dom";
 const CartPage = () => {
     const { cartData, Remove, Buy } = useContext(CartContext);
     let Valor = 0;
-    cartData.forEach((item) => {
-    Valor = parseFloat(Valor) + parseFloat(item.valor);
+    cartData.forEach((inversiones) => {
+    Valor = parseFloat(Valor) + parseFloat(inversiones.valor);
     });
     console.log(Valor);
     const valorTotal = Valor * cartData.length;

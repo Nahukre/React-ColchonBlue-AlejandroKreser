@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../contexts/cartContext";
+import { inversiones } from "../../services/inversiones";
 import Modal from "../Modal/Modal";
 import { useModal } from "../Modal/useModal";
 import "./ItemCount.css";
@@ -15,7 +16,7 @@ export const ItemCount  = ({stock, initial, onAddCart, quantity, value}) => {
         onAdd();
         resetCounter();
         openModal1();
-        AddToCart(value, counter);
+        AddToCart(quantity, inversiones);
         onAddCart(counter);
     }
     const resta = () => {
@@ -37,29 +38,7 @@ export const ItemCount  = ({stock, initial, onAddCart, quantity, value}) => {
         setCounter(counter - (counter - 1));      
     };
     
-    // const resta = () => {
-    //     if(counter > 1) {
-    //     setCounter(counter - 1)}
-    //     else 
-    //     setCounter(counter);
-    // };
-    // const suma = () => {
-    //     if (counter < stock){
-    //     setCounter(counter + 1)}
-    //     else
-    //     setCounter(counter);
-    // };
-    // const onAdd = () => {
-    //     console.log(counter);
-    // };
-    // const resetCounter = () => {
-    //     setCounter(counter - (counter - 1));      
-    // };
-    // const click = () => {
-    //     onAdd();
-    //     resetCounter();
-    //     openModal1();
-    // }
+    
     return (
         <><div className="contador">
                 <button className="botonesContador" onClick={resta}>-</button>
