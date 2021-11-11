@@ -8,19 +8,20 @@ import { Link } from "react-router-dom";
 
 
 const CartPage = () => {
-    const { cartData, Remove, Buy } = useContext(CartContext);
+    const { cartData, remove, buy, clear } = useContext(CartContext);
     let Valor = 0;
-    cartData.forEach((item) => {
-    Valor = parseFloat(Valor) + parseFloat(item.valor);
+    cartData.forEach(({item}) => {
+    Valor = (item.quantity) * (item.valor);
     });
     console.log(Valor);
-    const valorTotal = Valor * cartData.length;
+    const valorTotal = Valor ;
+    
 
     return (
         <div className="cart">   
             <Title text="Carrito"/>
             <div key={cartData.id}>
-                {cartData.map((item) => (
+                {cartData.map(({item}) => (
                     <div
                     key={item.id}
                     item={item}
@@ -32,7 +33,7 @@ const CartPage = () => {
                     <p>{item.denominacion}</p>
                     <p>Valor: {item.valor}</p>
                     <p>Total: {valorTotal}</p>
-                    <button onClick={() => Remove(item.id)}>Eliminar</button>
+                    <button onClick={() => remove(item.id)}>Eliminar</button>
                     </div>
                 ))}
                 {cartData.length >= 1 ? (
@@ -41,7 +42,8 @@ const CartPage = () => {
                     <h3>
                     Items: ({cartData.length}) Valor total: {Valor}
                     </h3>{" "}
-                    <button onClick={Buy}>Pagar Ahora</button>{" "}
+                    <button onClick={clear}>Vaciar carrito</button>
+                    <button onClick={buy}>Pagar Ahora</button>{" "}
                 </>
                 ) : (
                 <><h3>El carrito está vacio</h3>

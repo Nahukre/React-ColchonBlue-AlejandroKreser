@@ -4,7 +4,7 @@ import {ItemCount} from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
 
 export const ItemDetail = ({item}) => {
-    const { AddToCart } = useContext(CartContext);
+    const { addToCart } = useContext(CartContext);
     const [cartNumber, setCartNumber] = useState([]);
     
 
@@ -14,27 +14,10 @@ export const ItemDetail = ({item}) => {
     }
     console.log(cartNumber);
     const onAdd = (counter) => {
-        AddToCart(item, counter);
+        addToCart(item, counter);
         onAddCart(counter);
     };
     
-
-    // const addToCart = (item, quantity) => {
-    //     const isInCart = cart.find(x => x.producto.id === item.id)
-
-    //     if (isInCart) {
-    //         let nuevaCantidad = isInCart.cantidad + counter;
-    //         let posicion = cart.indexof(isInCart);
-    //         cart[posicion].cantidad = nuevaCantidad;
-    //         setCart(cart);
-    //     } else{
-    //         setCart([...cart, {producto: item, cantidad: quantity}]);
-    //     }
-    // }
-  
-
-
-
     return (
         <>
         <div className="inversiones_detail" id={item.to}>

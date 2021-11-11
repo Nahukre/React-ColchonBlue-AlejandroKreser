@@ -1,7 +1,5 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { CartContext } from "../../contexts/cartContext";
-import { inversiones } from "../../services/inversiones";
 import Modal from "../Modal/Modal";
 import { useModal } from "../Modal/useModal";
 import "./ItemCount.css";
