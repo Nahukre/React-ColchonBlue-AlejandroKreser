@@ -4,48 +4,24 @@ import React, { useEffect, useState } from "react";
 import Loading from "../Loader/Loader";
 import { useParams } from "react-router";
 
-
-
-
-    // const getItems = new Promise((res, rej) => {
-    //     setTimeout(() => {
-    //     res(inversiones);
-    //     }, 3000);
-    // });
+    const getItems = new Promise((res, rej) => {
+        setTimeout(() => {
+        res(inversiones);
+        }, 3000);
+    });
 
     export const ItemDetailContainer = () => {
     const {inversionesId} = useParams();   
     const [item, setItem] = useState();
 
-    // console.log(inversionesId);
-
-    // useEffect(() => {
-    //     getItems.then((res) => {
-    //         const itemToSet = res.filter((item) => {
-    //             return item.id === Number(inversionesId)
-    //         });
-    //     setItemDetail(itemToSet[0]);
-    // });
-    // }, [inversionesId]);
-    const getData = (data) =>
-    new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (data) {
-          resolve(data);
-        } else {
-          reject("No se encontro nada");
-        }
-      }, 2000);
+    useEffect(() => {
+        getItems.then((res) => {
+            const itemToSet = res.filter((item) => {
+                return item.id === Number(inversionesId)
+            });
+        setItem(itemToSet[0]);
     });
-
-  useEffect(() => {
-    getData(inversiones)
-      .then((res) => {
-        inversionesId ? setItem(res.find((item) => item.id === inversionesId)) : setItem(inversiones);
-      })
-      .catch((err) => console.log(err));
-  }, [inversionesId]);
-
+    }, [inversionesId]);
 
     console.log(item);
     console.log(inversiones);
@@ -56,7 +32,7 @@ import { useParams } from "react-router";
             <Loading/>
         ) : (
         <div className="ItemDetailContainer">
-            <ItemDetail item={item} key={item}/>
+            <ItemDetail item={item} key={item.id}/>
         </div>
         )}
         </>

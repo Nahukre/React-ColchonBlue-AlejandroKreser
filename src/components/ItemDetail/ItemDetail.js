@@ -8,12 +8,15 @@ export const ItemDetail = ({item}) => {
     const [cartNumber, setCartNumber] = useState([]);
     
 
-
     const onAddCart = (counter) => {
         setCartNumber(cartNumber + counter)
         console.log(counter)
     }
     console.log(cartNumber);
+    const onAdd = (counter) => {
+        AddToCart(item, counter);
+        onAddCart(counter);
+    };
     
 
     // const addToCart = (item, quantity) => {
@@ -42,7 +45,7 @@ export const ItemDetail = ({item}) => {
                 <h4 className="nivelRiesgo">{item.nivelRiesgo}</h4>
                 <p className="activo__valor">Valor: ${item.valor}</p>
                 <div>
-                    <ItemCount initial={1} stock={item.stock}  onAddCart={onAddCart}  AddToCart={AddToCart} quantity={cartNumber}/>
+                    <ItemCount initial={1} stock={item.stock}  onAdd={onAdd}  id={item.id} quantity={cartNumber}/>
                 </div>
             </div>
         </div> 

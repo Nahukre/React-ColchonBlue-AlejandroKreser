@@ -9,18 +9,18 @@ const Provider = ({ children }) => {
     // const [items, setItems] = useState(inversiones);
     console.log(cartData);
 
-    const AddToCart = (inversiones, counter) => {
+    const AddToCart = (item, counter) => {
         setCartData((prev) => {
-            const isItemInCart = prev.find((cartData) => cartData.inversiones.id === inversiones.id);
+            const isItemInCart = prev.find((cartData) => cartData.item.id === item.id);
             let quantity= counter;
             if(isItemInCart) {
                 return cartData.map((currentItem) => 
-                currentItem.inversiones.id === inversiones.id
-                ? {inversiones, quantity: currentItem.quantity + counter}
+                currentItem.item.id === item.id
+                ? {item, quantity: currentItem.quantity + counter}
                 : currentItem,
                 );
             }
-            return [...prev, {inversiones, quantity}];
+            return [...prev, {item, quantity}];
         });
     };
 
@@ -50,7 +50,7 @@ const Provider = ({ children }) => {
     };
 
     return (
-        <CartContext.Provider value={{ inversiones, AddToCart, cartData, Remove, Buy }}>
+        <CartContext.Provider value={{ AddToCart, cartData, Remove, Buy }}>
         {children}
         </CartContext.Provider>
     );

@@ -7,17 +7,15 @@ import { useModal } from "../Modal/useModal";
 import "./ItemCount.css";
 
 
-export const ItemCount  = ({stock, initial, onAddCart, quantity, value}) => {
+export const ItemCount  = ({stock, initial, onAdd, quantity, id, value}) => {
     const [isOpenModal1, openModal1, closeModal1] = useModal(false);
     const [counter, setCounter] = useState(initial);
-    const { AddToCart } = useContext(CartContext);
+    
 
     const click = () => {
-        onAdd();
         resetCounter();
         openModal1();
-        AddToCart(quantity, inversiones);
-        onAddCart(counter);
+        onAdd(counter);
     }
     const resta = () => {
         if(counter > 1) {
@@ -31,9 +29,6 @@ export const ItemCount  = ({stock, initial, onAddCart, quantity, value}) => {
         else
         setCounter(counter);
     };
-    const onAdd = () => {
-        console.log(counter);
-    };
     const resetCounter = () => {
         setCounter(counter - (counter - 1));      
     };
@@ -46,7 +41,7 @@ export const ItemCount  = ({stock, initial, onAddCart, quantity, value}) => {
                 <button className="botonesContador" onClick={suma}>+</button>
         </div>
         <div>
-            <button className="aniadir" onClick={click}>Añadir al carrito</button>
+            <button className="aniadir" id={id} onClick={click}>Añadir al carrito</button>
         </div>
         <Modal isOpen= {isOpenModal1} closeModal= {closeModal1}>
             <Link to="/"><button className="botonesModal">Seguir comprando</button></Link>
