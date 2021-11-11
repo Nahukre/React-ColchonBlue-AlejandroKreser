@@ -7,37 +7,56 @@ import { useParams } from "react-router";
 
 
 
-    const getItems = new Promise((res, rej) => {
-        setTimeout(() => {
-        res(inversiones);
-        }, 3000);
-    });
+    // const getItems = new Promise((res, rej) => {
+    //     setTimeout(() => {
+    //     res(inversiones);
+    //     }, 3000);
+    // });
 
     export const ItemDetailContainer = () => {
     const {inversionesId} = useParams();   
-    const [itemDetail, setItemDetail] = useState();
+    const [item, setItem] = useState();
 
-    console.log(inversionesId);
+    // console.log(inversionesId);
 
-    useEffect(() => {
-        getItems.then((res) => {
-            const itemToSet = res.filter((item) => {
-                return item.id === Number(inversionesId)
-            });
-        setItemDetail(itemToSet[0]);
+    // useEffect(() => {
+    //     getItems.then((res) => {
+    //         const itemToSet = res.filter((item) => {
+    //             return item.id === Number(inversionesId)
+    //         });
+    //     setItemDetail(itemToSet[0]);
+    // });
+    // }, [inversionesId]);
+    const getData = (data) =>
+    new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (data) {
+          resolve(data);
+        } else {
+          reject("No se encontro nada");
+        }
+      }, 2000);
     });
-    }, [inversionesId]);
 
-    console.log(itemDetail);
+  useEffect(() => {
+    getData(inversiones)
+      .then((res) => {
+        inversionesId ? setItem(res.find((item) => item.id === inversionesId)) : setItem(inversiones);
+      })
+      .catch((err) => console.log(err));
+  }, [inversionesId]);
+
+
+    console.log(item);
     console.log(inversiones);
 
-    if (!itemDetail) return null;
+    if (!item) return null;
     return (
-        <>{itemDetail === undefined ? (
+        <>{item === undefined ? (
             <Loading/>
         ) : (
         <div className="ItemDetailContainer">
-            <ItemDetail {...itemDetail} key={0}/>
+            <ItemDetail item={item} key={item}/>
         </div>
         )}
         </>
