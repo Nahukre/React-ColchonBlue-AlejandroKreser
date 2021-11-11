@@ -19,6 +19,7 @@ export const inversiones = [
             stock: 10,
             to: "dolarSolidario",
             categoria: "tradicionales",
+            quantity: 1,
         },
         {
             id: 2,
@@ -30,6 +31,7 @@ export const inversiones = [
             stock: 10,
             to: "dolarBolsa",
             categoria: "tradicionales",
+            quantity: 1,
         },
         {
             id: 3,
@@ -41,6 +43,7 @@ export const inversiones = [
             stock: 10,
             to: "dolarBlue",
             categoria: "tradicionales",
+            quantity: 1,
         },
         {
             id: 4,
@@ -52,6 +55,7 @@ export const inversiones = [
             stock: 10,
             to: "appleCedear",
             categoria: "acciones",
+            quantity: 1,
         },    
         {
             id: 5,
@@ -63,6 +67,7 @@ export const inversiones = [
             stock: 10,
             to: "amazonCedear",
             categoria: "acciones",
+            quantity: 1,
         },
         {
             id: 6,
@@ -74,6 +79,7 @@ export const inversiones = [
             stock: 10,
             to: "teslaCedear",
             categoria: "acciones",
+            quantity: 1,
         },
         {
             id: 7,
@@ -85,6 +91,7 @@ export const inversiones = [
             stock: 10,
             to: "oro",
             categoria: "tradicionales",
+            quantity: 1,
         },
         {
             id: 8,
@@ -96,6 +103,7 @@ export const inversiones = [
             stock: 10,
             to: "ethereum",
             categoria: "criptomonedas",
+            quantity: 1,
         },
         {
             id: 9,
@@ -107,6 +115,7 @@ export const inversiones = [
             stock: 10,
             to: "bitcoin",
             categoria: "criptomonedas",
+            quantity: 1,
         }
 
     ]

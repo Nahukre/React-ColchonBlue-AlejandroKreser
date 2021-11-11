@@ -30,7 +30,7 @@ export const ItemListContainer = () => {
     }, [categoriaTo]);
 
     return (
-        <>{ItemList === undefined ? (
+        <>{inversiones === undefined ? (
             <Loading/>
         ): (
         <div className="ItemListContainer">

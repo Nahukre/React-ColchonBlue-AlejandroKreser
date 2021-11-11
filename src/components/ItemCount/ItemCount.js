@@ -1,19 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../contexts/cartContext";
 import Modal from "../Modal/Modal";
 import { useModal } from "../Modal/useModal";
 import "./ItemCount.css";
 
 
-export const ItemCount  = ({stock, initial, onAddCart, quantity, AddToCart, value}) => {
+export const ItemCount  = ({stock, initial, onAddCart, quantity, value}) => {
     const [isOpenModal1, openModal1, closeModal1] = useModal(false);
     const [counter, setCounter] = useState(initial);
-    
+    const { AddToCart } = useContext(CartContext);
+
     const click = () => {
         onAdd();
         resetCounter();
         openModal1();
-        AddToCart(value);
+        AddToCart(value, counter);
         onAddCart(counter);
     }
     const resta = () => {
