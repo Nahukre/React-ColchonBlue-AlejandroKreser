@@ -15,7 +15,7 @@ const Provider = ({ children }) => {
             if(isItemInCart) {
                 return cartData.map((currentItem) => 
                 currentItem.item.id === item.id
-                ? {item, quantity: currentItem.quantity + quantity}
+                ? {item, quantity: currentItem.quantity + counter}
                 : currentItem,
                 );
             }
@@ -24,7 +24,7 @@ const Provider = ({ children }) => {
     };
 
     const remove = (id) => {
-        setCartData(cartData.filter((singal) => singal.id !== id));
+        setCartData(cartData.filter(({item}) => item.id !== id));
     };
     const clear = () => {
         setCartData([]);
