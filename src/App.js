@@ -49,6 +49,11 @@ function App() {
             <Cart />
           </div>  
         </Route>
+        <Route path="/*">
+          <div className="App">
+            <h1>Página no encontrada</h1>
+          </div>  
+        </Route>
       </Switch>
       <Footer />
       </Provider>

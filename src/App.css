@@ -9,7 +9,7 @@
 .App {
   text-align: center;
   background-color: #282c34;
-
+  min-height: 498px;
 }
 
 .App-logo {

@@ -8,46 +8,39 @@ import { Link } from "react-router-dom";
 
 
 const CartPage = () => {
-    const { cartData, remove, buy, clear } = useContext(CartContext);
-    let Valor = 0;
-    cartData.forEach(({item, quantity}) => {
-    Valor = quantity * item.valor;
-    });
-    console.log(Valor);
-    const valorTotal = Valor ;
-
+    const { cartData, remove, buy, clear, itemsTotales } = useContext(CartContext);
+    const sumaTotal = (total, previo) => total + previo;
+    const pagoTotal = cartData.map((itemCarrito) => itemCarrito.valor *  itemCarrito.quantity)
+    .reduce(sumaTotal, 0);
 
     return (
         <div className="cart">   
             <Title text="Carrito"/>
             <div key={cartData.id}>
-                {cartData.map(({item}, quantity) => (
+                {cartData.map((itemCarrito) => (
                     <div
-                    key={item.id}
-                    item={item}
+                    key={itemCarrito.id}
+                    item={itemCarrito}
                     style={{
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "space-evenly"
                     }}>
-                    <p>{item.denominacion}</p>
-                    <p>{quantity}</p>
-                    <p>Valor: {item.valor}</p>
-                    <p>Subtotal: {valorTotal}</p>
-                    <button onClick={() => remove(item.id)}>Eliminar</button>
+                    <p>{itemCarrito.denominacion}</p>
+                    <p>{itemCarrito.quantity}</p>
+                    <p>Valor: {itemCarrito.valor}</p>
+                    <p>Subtotal: {itemCarrito.valor * itemCarrito.quantity}</p>
+                    <button onClick={() => remove(itemCarrito.id)}>Eliminar</button>
                     </div>
                 ))}
                 {cartData.length >= 1 ? (
                     <>
                     {" "}
                     <h3>
-                    Items: {cartData.length} Valor total:{cartData.map(({item}) => {
-                        let precioTotal = 0;
-                        precioTotal = parseFloat(item.valor) + parseFloat(precioTotal);
-                        return precioTotal;
-                    })} 
+                    Items: {itemsTotales}{" "} 
+                    Valor total: {pagoTotal}
                     </h3>{" "}
-                    <button onClick={clear}>Vaciar carrito</button>
+                    <button onClick={clear}>Vaciar carrito</button>{" "}
                     <button onClick={buy}>Pagar Ahora</button>{" "}
                 </>
                 ) : (

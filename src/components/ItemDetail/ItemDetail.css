@@ -5,7 +5,7 @@
 }
 
 .activo__dolarBlue {
-  background-color: #6e9cff;
+  background-color: #548aff;
   border-radius: 5px;
   margin-top: 20px;
   margin-left: 0;
@@ -20,9 +20,6 @@
   padding: 10px;
   padding-left: 20px;
   padding-right: 20px;
-}
-.activo__dolarBlue:hover {
-background-color: #548aff;
 }
 
 .dolarBlue__nombre {

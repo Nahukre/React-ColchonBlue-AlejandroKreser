@@ -116,6 +116,7 @@ export const inversiones = [
             to: "bitcoin",
             categoria: "criptomonedas",
             quantity: 0,
+            total: null,
         }
 
     ]

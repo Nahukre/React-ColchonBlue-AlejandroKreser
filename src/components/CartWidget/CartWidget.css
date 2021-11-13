@@ -8,6 +8,7 @@
     margin-right: -25px;
     margin-top: 5px;
     text-align: right;
+    display: inline-block;
 }
 
 .carrito:hover {
@@ -22,4 +23,8 @@
     font-size: 45px;
     color: #548aff;
     padding-top: 15px;
+}
+
+.item {
+    display: inline-block;
 }
