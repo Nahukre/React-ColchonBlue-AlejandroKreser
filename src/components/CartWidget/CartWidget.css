@@ -1,19 +1,19 @@
 /* CardWidget */
 .carrito {
-    width: 60px;
+    width: 70px;
     height: 45px;
     padding-left: 5px;
     padding-right: 5px;
-    margin-left: 20px;
-    margin-right: -25px;
-    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: -35px;
+    margin-top: 3px;
     text-align: right;
     display: inline-block;
 }
 
-.carrito:hover {
+/* .carrito:hover {
     transform: scale(1.15)
-}
+} */
 
 .ItemListContainer {
     background-color: #282c34;
@@ -25,6 +25,18 @@
     padding-top: 15px;
 }
 
-.item {
+.items {
     display: inline-block;
+    position: absolute;
+    margin-left: -5px;
+    
+    color: rgb(172, 255, 47);
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 50%;
+    padding: 5px;
+    padding-top: 1px;
+    padding-bottom: 0px;
+    text-align: center;
+    margin-top: 10px;
 }

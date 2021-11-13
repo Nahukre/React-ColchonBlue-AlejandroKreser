@@ -50,7 +50,7 @@ export const inversiones = [
             denominacion: "Apple cedear",
             nivelRiesgo: "Activo recomendado para inversores moderados",
             valor: 3500,
-            descripcion: "Cedears  (Certificados de Depósito Argentinos) de la compañia Apple. Activo financiero atado al dolar y a la valuación de la empresa en el mercado.",
+            descripcion: "Cedears (Certificados de Depósito Argentinos) de la compañia Apple. Activo financiero atado al dolar y a la valuación de la empresa en el mercado.",
             foto: apple,
             stock: 10,
             to: "appleCedear",
@@ -116,7 +116,6 @@ export const inversiones = [
             to: "bitcoin",
             categoria: "criptomonedas",
             quantity: 0,
-            total: null,
         }
 
     ]

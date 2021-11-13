@@ -1,4 +1,65 @@
 .cart {
     min-height: 500px;
     color: white;
+    text-align: center;
+}
+
+.volver {
+    background-color: #282c34;
+    color: greenyellow;
+    border: solid;
+    border-color: greenyellow;
+    border-width: 1px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    padding: 5px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.volver:hover {
+    transform: scale(1.1);
+}
+
+.vacio {
+    font-size: 30px;
+    margin-top: 40px;
+    color: #548aff;
+}
+
+.spinner {
+    margin-top: 50px;
+}
+
+.botonesCart {
+    font-family: sans-serif;
+    color: black;
+    border: solid;
+    border-color: black;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 2px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    margin-left: 20px;
+    background-color: greenyellow;
+}
+.botonesCart:hover {
+    background-color: #548aff;
+    color: black;
+}
+
+.subTotales {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    /* justify-content: space-between; */
+}
+
+.sub {
+    margin:auto;
+    /* justify-content: space-between; */
+    align-items: center;
 }

@@ -1,20 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../contexts/cartContext";
 import Modal from "../Modal/Modal";
 import { useModal } from "../Modal/useModal";
 import "./ItemCount.css";
 
 
-export const ItemCount  = ({stock, initial, onAdd, quantity, id, value}) => {
+export const ItemCount  = ({stock, initial, onAdd, quantity, id}) => {
     const [isOpenModal1, openModal1, closeModal1] = useModal(false);
     const [counter, setCounter] = useState(initial);
+    const {cartData} = useContext(CartContext);
     
-
-    const click = () => {
-        resetCounter();
-        openModal1();
-        onAdd(counter);
-    }
     const resta = () => {
         if(counter > 1) {
         setCounter(counter - 1)}
@@ -22,14 +18,30 @@ export const ItemCount  = ({stock, initial, onAdd, quantity, id, value}) => {
         setCounter(counter);
     };
     const suma = () => {
-        if (counter < stock){
+        if (counter < stock) {
         setCounter(counter + 1)}
         else
         setCounter(counter);
     };
+    // const suma = () => {
+    //     if (counter < stock && (stock - cartData.quantity) > counter) {
+    //     setCounter(counter + 1)}
+    //     else
+    //     setCounter(counter);
+    // };
+console.log(cartData.quantity);
+console.log(cartData);
+console.log(quantity);
+
     const resetCounter = () => {
         setCounter(counter - (counter - 1));      
     };
+
+    const click = () => {
+        resetCounter();
+        openModal1();
+        onAdd(counter);
+    }
     
     
     return (
