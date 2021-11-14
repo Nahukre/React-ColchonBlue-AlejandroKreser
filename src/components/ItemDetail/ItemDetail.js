@@ -2,21 +2,10 @@ import { useContext, useState } from "react";
 import { CartContext } from "../../contexts/cartContext";
 import {ItemCount} from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
-// import { getFirestore, collection } from "@firebase/firestore";
-// import { doc, getDoc} from "@firebase/firestore";
-
 
 export const ItemDetail = ({item}) => {
     const { addToCart } = useContext(CartContext);
     const [cartNumber, setCartNumber] = useState([]);
-
-    // useEffect(() => {
-    //     const db = getFirestore;
-    //     const itemsCollection = collection(db, "items");
-    //     const item = itemsCollection.doc();
-    //     console.log(itemsCollection);
-
-    // }, []);
 
     const onAddCart = (counter) => {
         setCartNumber(cartNumber + counter)
@@ -46,7 +35,5 @@ export const ItemDetail = ({item}) => {
     );
 };
 
-
 export default ItemDetail;
 
-// onAdd={OnAdd} onClick={x => addToCart(item, counter)}

@@ -3,25 +3,37 @@ import { inversiones } from "../../services/inversiones";
 import React, { useEffect, useState } from "react";
 import Loading from "../Loader/Loader";
 import { useParams } from "react-router";
+import { doc, getDoc, getFirestore } from "@firebase/firestore";
 
-    const getItems = new Promise((res, rej) => {
-        setTimeout(() => {
-        res(inversiones);
-        }, 3000);
-    });
+    // const getItems = new Promise((res, rej) => {
+    //     setTimeout(() => {
+    //     res(inversiones);
+    //     }, 3000);
+    // });
 
     export const ItemDetailContainer = () => {
     const {inversionesId} = useParams();   
     const [item, setItem] = useState();
 
     useEffect(() => {
-        getItems.then((res) => {
-            const itemToSet = res.filter((item) => {
-                return item.id === Number(inversionesId)
-            });
-        setItem(itemToSet[0]);
+    const db = getFirestore();
+
+    const invRef = doc(db, "items", inversionesId);
+    getDoc(invRef).then((snapshot) => {
+        if (snapshot.exists()) {
+        setItem(snapshot.data());
+        }
     });
     }, [inversionesId]);
+
+    // useEffect(() => {
+    //     getItems.then((res) => {
+    //         const itemToSet = res.filter((item) => {
+    //             return item.id === Number(inversionesId)
+    //         });
+    //     setItem(itemToSet[0]);
+    // });
+    // }, [inversionesId]);
 
     console.log(item);
     console.log(inversiones);

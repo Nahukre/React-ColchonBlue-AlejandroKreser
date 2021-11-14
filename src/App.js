@@ -9,8 +9,6 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import Cart from "./components/Cart/Cart";
 import Provider from "./contexts/cartContext";
 
-
-
 function App() {
 
   return (
