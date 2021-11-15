@@ -27,18 +27,16 @@ export const ItemListContainer = () => {
 
     useEffect(() => {
         async function getItems(db) {
-        const itemsCol = categoriaTo
-        ? query(
+        const itemsCol = categoriaTo ? query(
             collection(db, "items"),
             where("categoria", "==", categoriaTo)
-        )
-: collection(db, "items");
-const snapshot = await getDocs(itemsCol);
-const itemsList = snapshot.docs.map((doc) => doc.data());
-return setProductos(itemsList);
-    }
-    getItems(db);
-}, [categoriaTo]);
+        ) : collection(db, "items");
+        const snapshot = await getDocs(itemsCol);
+        const itemsList = snapshot.docs.map((doc) => doc.data());
+        return setProductos(itemsList);
+        }
+        getItems(db);
+    }, [categoriaTo]);
 
     // const getData = (data) =>
     //     new Promise((resolve, reject) => {

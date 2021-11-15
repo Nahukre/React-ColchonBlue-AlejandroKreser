@@ -37,9 +37,6 @@ console.log(item);
     // });
     // }, [inversionesId]);
 
-    console.log(item);
-
-
     if (!item) return null;
     return (
         <>{item === undefined ? (
