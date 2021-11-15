@@ -7,23 +7,38 @@ import { useParams } from "react-router";
 import Loading from "../Loader/Loader";
 import { getFirestore } from "@firebase/firestore";
 import { collection, query, where, getDocs } from "firebase/firestore";
+import { db } from "../../Firebase";
 
 export const ItemListContainer = () => {
     const {categoriaTo} = useParams();
     const [productos, setProductos] =useState([]);
     
-    useEffect(() => {
-        const db = getFirestore();
+    // useEffect(() => {
+    //     const q = query(
+    //       collection(db, "items"),
+    //     //   where("price", ">", 100),
+    //       where("categoria", "==", categoriaTo)
+    //     );
+    //     getDocs(q).then((snapshot) => {
+    //         setProductos(snapshot.docs.map((doc) => doc.data()))
+    //     });
+    // }, [categoriaTo]);
 
-        // const q = query(
-        //   collection(db, "items"),
-        //   where("price", ">", 100),
-        //   where("categoria", "==", "tradicionales")
-        // );
-        getDocs(collection(db, "items")).then((snapshot) => {
-          setProductos(snapshot.docs.map((doc) => doc.data(categoriaTo)));
-        });
-      }, [categoriaTo]);
+
+    useEffect(() => {
+        async function getItems(db) {
+        const itemsCol = categoriaTo
+        ? query(
+            collection(db, "items"),
+            where("categoria", "==", categoriaTo)
+        )
+: collection(db, "items");
+const snapshot = await getDocs(itemsCol);
+const itemsList = snapshot.docs.map((doc) => doc.data());
+return setProductos(itemsList);
+    }
+    getItems(db);
+}, [categoriaTo]);
 
     // const getData = (data) =>
     //     new Promise((resolve, reject) => {
@@ -45,7 +60,7 @@ export const ItemListContainer = () => {
     // }, [categoriaTo]);
 
     return (
-        <>{inversiones === undefined ? (
+        <>{db === undefined ? (
             <Loading/>
         ): (
         <div className="ItemListContainer">

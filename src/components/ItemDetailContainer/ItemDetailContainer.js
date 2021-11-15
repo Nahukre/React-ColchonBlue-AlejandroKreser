@@ -3,7 +3,8 @@ import { inversiones } from "../../services/inversiones";
 import React, { useEffect, useState } from "react";
 import Loading from "../Loader/Loader";
 import { useParams } from "react-router";
-import { doc, getDoc, getFirestore } from "@firebase/firestore";
+import { doc, getDoc } from "@firebase/firestore";
+import { db } from "../../Firebase";
 
     // const getItems = new Promise((res, rej) => {
     //     setTimeout(() => {
@@ -16,8 +17,6 @@ import { doc, getDoc, getFirestore } from "@firebase/firestore";
     const [item, setItem] = useState();
 
     useEffect(() => {
-    const db = getFirestore();
-
     const invRef = doc(db, "items", inversionesId);
     getDoc(invRef).then((snapshot) => {
         if (snapshot.exists()) {
@@ -25,6 +24,9 @@ import { doc, getDoc, getFirestore } from "@firebase/firestore";
         }
     });
     }, [inversionesId]);
+console.log(item);
+
+
 
     // useEffect(() => {
     //     getItems.then((res) => {
@@ -36,7 +38,7 @@ import { doc, getDoc, getFirestore } from "@firebase/firestore";
     // }, [inversionesId]);
 
     console.log(item);
-    console.log(inversiones);
+
 
     if (!item) return null;
     return (

@@ -38,7 +38,7 @@ export const inversiones = [
             denominacion: "Dolar blue",
             nivelRiesgo: "Activo recomendado para inversores conservadores",
             valor: 185,
-            descripcion: "El Dólar Blue es aquel que se consigue en el mercado paralelo. Su cotización generalmente es superior a la cotización del oficial y suele aumentar a medida que aumentan las restricciones para la compra de dólares al precio oficial.",
+            descripcion: "El dólar blue es aquel que se consigue en el mercado paralelo. Su cotización generalmente es superior a la cotización del oficial y suele aumentar a medida que aumentan las restricciones para la compra de dólares al precio oficial.",
             foto: dolarBlue,
             stock: 10,
             to: "dolarBlue",

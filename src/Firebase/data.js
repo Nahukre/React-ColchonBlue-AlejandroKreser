@@ -4,7 +4,7 @@ require("firebase/firestore");
 
 // Initialize Cloud Firestore through Firebase
 firebase.initializeApp({
-    apiKey: "<IzaSyD0uFw_y6JMPv-f87483B4-X1IirBFGIkM",
+    apiKey: "AIzaSyD0uFw_y6JMPv-f87483B4-X1IirBFGIkM",
     authDomain: "colchon-blue.firebaseapp.com",
     projectId: "colchon-blue"
   });
