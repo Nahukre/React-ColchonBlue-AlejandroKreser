@@ -13,12 +13,12 @@ export const ItemListContainer = () => {
     const [productos, setProductos] =useState([]);
     
     useEffect(() => {
-        async function getItems(db) {
-        const itemsCol = categoriaTo ? query(
+        async function getInversiones(db) {
+        const inversiones = categoriaTo ? query(
             collection(db, "items"),
             where("categoria", "==", categoriaTo)
         ) : collection(db, "items");
-        const snapshot = await getDocs(itemsCol);
+        const snapshot = await getDocs(inversiones);
         const itemsList = snapshot.docs.map((doc) => ({...doc.data(), id:doc.id}));
         const itemSort =  itemsList.sort((a, b) => {
             if (a.denominacion > b.denominacion) return 1
@@ -27,7 +27,7 @@ export const ItemListContainer = () => {
           })
         return setProductos(itemSort);
         }
-        getItems(db);
+        getInversiones(db);
     }, [categoriaTo]);
 
 

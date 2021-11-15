@@ -29,7 +29,6 @@ import { db } from "../../Firebase";
         };
     getInversiones(db);
     }, [inversionesId]);
-    console.log(db);
 
     //codigo anterior para utilizar el json
     // useEffect(() => {

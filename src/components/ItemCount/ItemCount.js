@@ -29,7 +29,7 @@ export const ItemCount  = ({stock, initial, onAdd, quantity, id}) => {
     //     else
     //     setCounter(counter);
     // };
-console.log(cartData.quantity);
+console.log(cartData.quantity)
 console.log(cartData);
 console.log(quantity);
 
