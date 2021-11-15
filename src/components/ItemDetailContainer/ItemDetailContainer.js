@@ -1,11 +1,11 @@
 import { ItemDetail } from "../ItemDetail/ItemDetail";
-import { inversiones } from "../../services/inversiones";
 import React, { useEffect, useState } from "react";
 import Loading from "../Loader/Loader";
 import { useParams } from "react-router";
 import { doc, getDoc } from "@firebase/firestore";
 import { db } from "../../Firebase";
 
+//codigo anterior para utilizar el json
     // const getItems = new Promise((res, rej) => {
     //     setTimeout(() => {
     //     res(inversiones);
@@ -17,17 +17,21 @@ import { db } from "../../Firebase";
     const [item, setItem] = useState();
 
     useEffect(() => {
-    const invRef = doc(db, "items", inversionesId);
-    getDoc(invRef).then((snapshot) => {
-        if (snapshot.exists()) {
-        setItem(snapshot.data());
-        }
-    });
+
+        const getInversiones = (db) => {
+            const inversion = doc(db, "items", inversionesId);
+            getDoc(inversion).then((snapshot) => {
+                if (snapshot.exists()) {
+                    console.log(snapshot.data());
+                    setItem(snapshot.data());
+                }
+            });
+        };
+    getInversiones(db);
     }, [inversionesId]);
-console.log(item);
+    console.log(db);
 
-
-
+    //codigo anterior para utilizar el json
     // useEffect(() => {
     //     getItems.then((res) => {
     //         const itemToSet = res.filter((item) => {

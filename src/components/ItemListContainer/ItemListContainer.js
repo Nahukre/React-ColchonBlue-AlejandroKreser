@@ -1,11 +1,10 @@
 import { ItemList } from "../ItemList/ItemList";
 import { Title } from "../Title/Title";
 import { useState } from "react/cjs/react.development";
-import { inversiones } from "../../services/inversiones"
+// import { inversiones } from "../../services/inversiones"
 import { useEffect } from "react";
 import { useParams } from "react-router";
 import Loading from "../Loader/Loader";
-import { getFirestore } from "@firebase/firestore";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { db } from "../../Firebase";
 
@@ -13,18 +12,6 @@ export const ItemListContainer = () => {
     const {categoriaTo} = useParams();
     const [productos, setProductos] =useState([]);
     
-    // useEffect(() => {
-    //     const q = query(
-    //       collection(db, "items"),
-    //     //   where("price", ">", 100),
-    //       where("categoria", "==", categoriaTo)
-    //     );
-    //     getDocs(q).then((snapshot) => {
-    //         setProductos(snapshot.docs.map((doc) => doc.data()))
-    //     });
-    // }, [categoriaTo]);
-
-
     useEffect(() => {
         async function getItems(db) {
         const itemsCol = categoriaTo ? query(
@@ -32,12 +19,19 @@ export const ItemListContainer = () => {
             where("categoria", "==", categoriaTo)
         ) : collection(db, "items");
         const snapshot = await getDocs(itemsCol);
-        const itemsList = snapshot.docs.map((doc) => doc.data());
-        return setProductos(itemsList);
+        const itemsList = snapshot.docs.map((doc) => ({...doc.data(), id:doc.id}));
+        const itemSort =  itemsList.sort((a, b) => {
+            if (a.denominacion > b.denominacion) return 1
+            if (a.denominacion < b.denominacion) return -1
+            return 0
+          })
+        return setProductos(itemSort);
         }
         getItems(db);
     }, [categoriaTo]);
 
+
+//codigo viejo para utilizacion del json
     // const getData = (data) =>
     //     new Promise((resolve, reject) => {
     //         setTimeout(() => { 
