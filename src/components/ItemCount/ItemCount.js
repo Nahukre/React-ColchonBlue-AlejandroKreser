@@ -5,7 +5,6 @@ import Modal from "../Modal/Modal";
 import { useModal } from "../Modal/useModal";
 import "./ItemCount.css";
 
-
 export const ItemCount  = ({stock, initial, onAdd, quantity, id}) => {
     const [isOpenModal1, openModal1, closeModal1] = useModal(false);
     const [counter, setCounter] = useState(initial);
@@ -23,12 +22,7 @@ export const ItemCount  = ({stock, initial, onAdd, quantity, id}) => {
         else
         setCounter(counter);
     };
-    // const suma = () => {
-    //     if (counter < stock && (stock - cartData.quantity) > counter) {
-    //     setCounter(counter + 1)}
-    //     else
-    //     setCounter(counter);
-    // };
+
 console.log(cartData.quantity)
 console.log(cartData);
 console.log(quantity);
@@ -42,7 +36,6 @@ console.log(quantity);
         openModal1();
         onAdd(counter);
     }
-    
     
     return (
         <><div className="contador">
