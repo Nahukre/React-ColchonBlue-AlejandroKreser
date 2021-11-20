@@ -5,10 +5,8 @@ export const CartContext = createContext();
 
 const Provider = ({ children }) => {
     const [cartData, setCartData] = useState([]);
-    console.log(cartData);
 
     const itemsTotales = cartData.reduce((total, itemCarrito) => total +itemCarrito.quantity, 0)
-    
     const addToCart = (item, counter) => {
         const itemCarrito = {denominacion: item.denominacion, valor: item.valor, id: item.id, quantity: counter}
         setCartData((prev) => {
@@ -23,7 +21,6 @@ const Provider = ({ children }) => {
             return [...prev, itemCarrito];
         });
     };
-    console.log(cartData);
 
     const restaCantidad = () => {
         if(cartData.quantity > 1) {

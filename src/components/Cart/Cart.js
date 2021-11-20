@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Title } from "../Title/Title";
 import "./Cart.css";
 import { useContext } from "react";
@@ -8,7 +8,7 @@ import Loader from "react-loader-spinner";
 import FinalizarCompra from "../FinalizarCompra/FinalizarCompra";
 import { useFinalizarCompra } from "../FinalizarCompra/useFinalizarCompra";
 import { useState } from "react/cjs/react.development"; 
-import { addDoc, collection } from "@firebase/firestore";
+import { addDoc, collection, getDocs } from "@firebase/firestore";
 import { db } from "../../Firebase";
 import BuyerForm from "../BuyerForm/BuyerForm";
 
@@ -22,6 +22,7 @@ const CartPage = () => {
     .reduce(sumaTotal, 0);
     // sumaCantidad, restaCantidad 
     const [order, setOrder] = useState([]);
+    const [orderNumber, setOrderNumber] = useState([]);
     const [buyer, setBuyer] = useState({
         nombre: "",
         telefono: "",
@@ -31,13 +32,12 @@ const CartPage = () => {
     function handleChange(evt) {
         setBuyer({ ...buyer, [evt.target.name]: evt.target.value });
     }
-    console.log(buyer);
 
     const crearPedido =  () => {
-       
+    
         const date = new Date();
         const orderdate = date.toLocaleString();
-     
+    
         const newOrder = {
             newBuyer: buyer,
             items: cartData,
@@ -46,17 +46,22 @@ const CartPage = () => {
         };
         setOrder(newOrder);
         
-        // setBuyer({
-        //     nombre: "",
-        //     telefono: "",
-        //     email: "",
-        // })
-        
         const ordersCollection = collection(db, "orders");
         addDoc(ordersCollection, newOrder).then( ({id}) => console.log(id));
     };
-    console.log(buyer);
-    console.log(order);
+
+    useEffect(() => {
+        async function getId(db) {
+    const ids = collection(db, "orders");
+    const snapshot = await getDocs(ids);
+    const idList = snapshot.docs.map((doc) => ({...doc.data(), id:doc.id}));
+    return setOrderNumber(idList);
+    
+    }
+    getId(db);
+}, []);
+
+
     const finalizarPedido = () => {
         buy();
         crearPedido();
