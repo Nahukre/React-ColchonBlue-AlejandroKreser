@@ -28,29 +28,35 @@ const CartPage = () => {
         email: "",
     });
 
+    function handleChange(evt) {
+        setBuyer({ ...buyer, [evt.target.name]: evt.target.value });
+    }
+    console.log(buyer);
+
     const crearPedido =  () => {
        
         const date = new Date();
         const orderdate = date.toLocaleString();
      
         const newOrder = {
-            buyer: buyer,
+            newBuyer: buyer,
             items: cartData,
             date: orderdate,
             total: pagoTotal,
         };
         setOrder(newOrder);
         
-        setBuyer({
-            nombre: "",
-            telefono: "",
-            email: "",
-        })
+        // setBuyer({
+        //     nombre: "",
+        //     telefono: "",
+        //     email: "",
+        // })
         
         const ordersCollection = collection(db, "orders");
         addDoc(ordersCollection, newOrder).then( ({id}) => console.log(id));
     };
-
+    console.log(buyer);
+    console.log(order);
     const finalizarPedido = () => {
         buy();
         crearPedido();
@@ -109,12 +115,7 @@ const CartPage = () => {
                 )}
             </div>
             <FinalizarCompra isOpen= {isOpen1} closeFinalizar= {closeFinalizar1}>
-                <label for="nombre">Nombre:</label>
-                <BuyerForm setBuyer={setBuyer} name="nombre" buyer={buyer}/>
-                <label for="nombre">Telefono:</label>
-                <BuyerForm setBuyer={setBuyer} name="telefono" buyer={buyer}/>
-                <label for="nombre">Email:</label>
-                <BuyerForm setBuyer={setBuyer} name= "email" buyer={buyer}/>
+                <BuyerForm setBuyer={setBuyer} name="name" buyer={buyer} handleChange={handleChange}/>
                 <Link to="/">
                     <button className="botonesModal" onClick={finalizarPedido}>Finalizar compra</button>
                 </Link>
