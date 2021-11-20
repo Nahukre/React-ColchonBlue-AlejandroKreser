@@ -18,7 +18,6 @@ export const ItemDetail = ({item}) => {
     };
     
     return (
-        <>
         <div className="inversiones_detail" id={item.to}>
             <div className= "activo__dolarBlue">
                 <h2 className="dolarBlue__nombre">{item.denominacion}</h2>
@@ -31,7 +30,6 @@ export const ItemDetail = ({item}) => {
                 </div>
             </div>
         </div> 
-        </>
     );
 };
 

@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 export const TiposInversionContainer = () => {
 
     return (
-        <>
         <section className="pagina">
             <section id="activo2">
                 <div className="activo__dolarBlue2">
@@ -38,6 +37,5 @@ export const TiposInversionContainer = () => {
                 </div>
             </section>
         </section>
-        </>
     );
 };

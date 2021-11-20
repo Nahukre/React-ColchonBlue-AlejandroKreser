@@ -5,21 +5,61 @@ import { useContext } from "react";
 import { CartContext } from "../../contexts/cartContext";
 import { Link } from "react-router-dom";
 import Loader from "react-loader-spinner";
+import FinalizarCompra from "../FinalizarCompra/FinalizarCompra";
+import { useFinalizarCompra } from "../FinalizarCompra/useFinalizarCompra";
+import { useState } from "react/cjs/react.development"; 
+import { addDoc, collection } from "@firebase/firestore";
+import { db } from "../../Firebase";
+import BuyerForm from "../BuyerForm/BuyerForm";
 
 
 
 const CartPage = () => {
-    const { cartData, remove, buy, clear, itemsTotales, sumaCantidad, restaCantidad } = useContext(CartContext);
+    const [isOpen1, openFinalizar1, closeFinalizar1] = useFinalizarCompra(false);
+    const { cartData, remove, buy, clear, itemsTotales } = useContext(CartContext);
     const sumaTotal = (total, previo) => total + previo;
     const pagoTotal = cartData.map((itemCarrito) => itemCarrito.valor *  itemCarrito.quantity)
     .reduce(sumaTotal, 0);
+    // sumaCantidad, restaCantidad 
+    const [order, setOrder] = useState([]);
+    const [buyer, setBuyer] = useState({
+        nombre: "",
+        telefono: "",
+        email: "",
+    });
 
+    const crearPedido =  () => {
+       
+        const date = new Date();
+        const orderdate = date.toLocaleString();
+     
+        const newOrder = {
+            buyer: buyer,
+            items: cartData,
+            date: orderdate,
+            total: pagoTotal,
+        };
+        setOrder(newOrder);
+        
+        setBuyer({
+            nombre: "",
+            telefono: "",
+            email: "",
+        })
+        
+        const ordersCollection = collection(db, "orders");
+        addDoc(ordersCollection, newOrder).then( ({id}) => console.log(id));
+    };
+
+    const finalizarPedido = () => {
+        buy();
+        crearPedido();
+    }
     return (
         <div className="cart">   
             <Title text="Carrito"/>
             <div key={cartData.id}>
             {cartData.length >= 1 ? (
-                    <>
                     <div
                     style={{
                     display: "flex",
@@ -31,7 +71,6 @@ const CartPage = () => {
                     <p>Valor</p>
                     <p>Subtotal</p>
                     </div>
-                </>
                 ) : null
                 }
                 {cartData.map((itemCarrito) => (
@@ -61,7 +100,7 @@ const CartPage = () => {
                         <h3 className="sub">{pagoTotal}</h3>
                     </div>
                     <button className="botonesCart" onClick={clear}>Vaciar carrito</button>
-                    <button className="botonesCart" onClick={buy}>Pagar Ahora</button>
+                    <button className="botonesCart" onClick={openFinalizar1}>Pagar Ahora</button>
                 </>
                 ) : (
                 <><Loader className="spinner" type="Circles" color="#548aff" height={120} width={120}/>
@@ -69,6 +108,17 @@ const CartPage = () => {
                 <Link to="/"><button className="volver">Ir a comprar</button></Link></>
                 )}
             </div>
+            <FinalizarCompra isOpen= {isOpen1} closeFinalizar= {closeFinalizar1}>
+                <label for="nombre">Nombre:</label>
+                <BuyerForm setBuyer={setBuyer} name="nombre" buyer={buyer}/>
+                <label for="nombre">Telefono:</label>
+                <BuyerForm setBuyer={setBuyer} name="telefono" buyer={buyer}/>
+                <label for="nombre">Email:</label>
+                <BuyerForm setBuyer={setBuyer} name= "email" buyer={buyer}/>
+                <Link to="/">
+                    <button className="botonesModal" onClick={finalizarPedido}>Finalizar compra</button>
+                </Link>
+            </FinalizarCompra>
         </div> 
     );
 };

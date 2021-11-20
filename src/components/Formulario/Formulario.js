@@ -7,7 +7,6 @@ export const Formulario = () => {
             <form className="pagina" action="https://formsubmit.co/nahuelkreser@gmail.com" method="POST">
             <fieldset>
                 <div className="formulario">
-                    
                     <p>
                         <label for="nombre">Nombre:</label>
                         <input type="text" name="nombre" required/>

@@ -5,7 +5,6 @@ import "./Item.css";
 export const Item = ({inversiones}) => {
 
     return (
-        <>
         <div className="card__dolares">
             <h5 className="dolarNombre">{inversiones.denominacion}</h5>
             <img className="dolarFoto" src={inversiones.foto} alt={inversiones.denominacion}/>
@@ -14,7 +13,6 @@ export const Item = ({inversiones}) => {
                 <button className="detalle">Comprar</button>
             </Link> 
         </div>
-        </>
     );
 };
 

@@ -37,13 +37,13 @@ const Provider = ({ children }) => {
     const remove = (id) => {
         setCartData(cartData.filter((item) => item.id !== id));
     };
+
     const clear = () => {
         setCartData([]);
     }
 
     const buy = () => {
         setCartData([]);
-        alert("compra exitosa");
         return;
     };
 

@@ -8,11 +8,9 @@ export const CartWidget = () => {
     const { itemsTotales } = useContext(CartContext);
 
     return (
-        <>
         <Link to="/cart">
             <img src={carretilla} className="carrito" alt="Carrito de compras"></img>
             { itemsTotales > 0 ? (<span className="items" alt="Contador items">{itemsTotales}</span>) : null}
         </Link>
-        </>
     );
 }
