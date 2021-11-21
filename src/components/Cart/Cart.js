@@ -8,7 +8,7 @@ import Loader from "react-loader-spinner";
 import FinalizarCompra from "../FinalizarCompra/FinalizarCompra";
 import { useFinalizarCompra } from "../FinalizarCompra/useFinalizarCompra";
 import { useState } from "react/cjs/react.development"; 
-import { addDoc, collection, getDocs } from "@firebase/firestore";
+import { addDoc, collection, getDoc } from "@firebase/firestore";
 import { db } from "../../Firebase";
 import BuyerForm from "../BuyerForm/BuyerForm";
 
@@ -50,33 +50,34 @@ const CartPage = () => {
         addDoc(ordersCollection, newOrder).then( ({id}) => console.log(id));
         // addDoc(ordersCollection, newOrder).then( ({id}) => setOrderNumber(id));
     };
+    console.log(orderNumber)
+
+    // useEffect(() => {
+    //     async function getId(db) {
+    // const ids = collection(db, "orders");
+    // const snapshot = await getDocs(ids);
+    // const idList = snapshot.docs.map((doc) => ({...doc.data(), id:doc.id}));
+    // return setOrderNumber(idList);
+    // }
+    // getId(db);
+    // }, []);
     
-    useEffect(() => {
-        async function getId(db) {
-    const ids = collection(db, "orders");
-    const snapshot = await getDocs(ids);
-    const idList = snapshot.docs.map((doc) => ({...doc.data(), id:doc.id}));
-    return setOrderNumber(idList);
-    }
-    getId(db);
-    }, []);
-    
-    const idCompra = () => {
-    const filtradoId = orderNumber.sort((a, b) => {
-        if (a.date > b.date) return -1
-        if (a.date < b.date) return 1
-        return 0});
-    const ultimoId = filtradoId[0];
-    console.log(ultimoId.id)
-    return ultimoId.id
-    }
+    // const idCompra = () => {
+    // const filtradoId = orderNumber.sort((a, b) => {
+    //     if (a.date > b.date) return -1
+    //     if (a.date < b.date) return 1
+    //     return 0});
+    // const ultimoId = filtradoId[0];
+    // console.log(ultimoId.id)
+    // return ultimoId.id
+    // }
 
     const finalizarPedido = () => {
         buy();
         crearPedido();
-        idCompra();
+        // idCompra();
     }
-    console.log(idCompra);
+
     return (
         <div className="cart">   
             <Title text="Carrito"/>
@@ -128,15 +129,14 @@ const CartPage = () => {
                 <><Loader className="spinner" type="Circles" color="#548aff" height={120} width={120}/>
                 <h3 className="vacio">El carrito está vacio</h3>
                 <Link to="/"><button className="volver">Ir a comprar</button></Link>
-                <p>{idCompra}</p></>
+                </>
                 )}
             </div>
             <FinalizarCompra isOpen= {isOpen1} closeFinalizar= {closeFinalizar1}>
                 <BuyerForm setBuyer={setBuyer} name="name" buyer={buyer} handleChange={handleChange}/>
-                {/* <Link to="/"> */}
-                    <button className="botonesModal" onClick={finalizarPedido}>Finalizar compra</button>
-                {/* </Link> */}
-                <p>{idCompra}</p>
+                <Link to="/">
+                    <button disabled={!(buyer.nombre && buyer.telefono && buyer.email)} className="botonesModal" onClick={finalizarPedido}>Finalizar compra</button>
+                </Link>
             </FinalizarCompra>
         </div> 
     );
