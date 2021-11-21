@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Title } from "../Title/Title";
 import "./Cart.css";
 import { useContext } from "react";
@@ -8,7 +8,7 @@ import Loader from "react-loader-spinner";
 import FinalizarCompra from "../FinalizarCompra/FinalizarCompra";
 import { useFinalizarCompra } from "../FinalizarCompra/useFinalizarCompra";
 import { useState } from "react/cjs/react.development"; 
-import { addDoc, collection, getDoc } from "@firebase/firestore";
+import { addDoc, collection } from "@firebase/firestore";
 import { db } from "../../Firebase";
 import BuyerForm from "../BuyerForm/BuyerForm";
 
@@ -50,8 +50,9 @@ const CartPage = () => {
         addDoc(ordersCollection, newOrder).then( ({id}) => console.log(id));
         // addDoc(ordersCollection, newOrder).then( ({id}) => setOrderNumber(id));
     };
-    console.log(orderNumber)
-
+    console.log(orderNumber);
+    console.log(order);
+    console.log(crearPedido)
     // useEffect(() => {
     //     async function getId(db) {
     // const ids = collection(db, "orders");
