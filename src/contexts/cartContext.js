@@ -22,15 +22,15 @@ const Provider = ({ children }) => {
         });
     };
 
-    const restaCantidad = () => {
+    const restaCantidad = (cartData) => {
         if(cartData.quantity > 1) {
         setCartData(cartData.quantity - 1)}
     };
-    const sumaCantidad = (item) => {
+    const sumaCantidad = (cartData, item) => {
         if (cartData.quantity < item.stock){
         setCartData(cartData.quantity + 1)}
     };
-
+    console.log(cartData.quantity)
     const remove = (id) => {
         setCartData(cartData.filter((item) => item.id !== id));
     };
