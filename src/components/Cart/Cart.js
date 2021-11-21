@@ -21,7 +21,7 @@ const CartPage = () => {
     const pagoTotal = cartData.map((itemCarrito) => itemCarrito.valor *  itemCarrito.quantity)
     .reduce(sumaTotal, 0);
     // sumaCantidad, restaCantidad 
-    const [order, setOrder] = useState([]);
+    const [order, setOrder] = useState();
     const [orderNumber, setOrderNumber] = useState([]);
     const [buyer, setBuyer] = useState({
         nombre: "",
@@ -36,36 +36,47 @@ const CartPage = () => {
     const crearPedido =  () => {
     
         const date = new Date();
-        const orderdate = date.toLocaleString();
+        const orderDate = date.toLocaleString();
     
         const newOrder = {
             newBuyer: buyer,
             items: cartData,
-            date: orderdate,
+            date: orderDate,
             total: pagoTotal,
         };
         setOrder(newOrder);
         
         const ordersCollection = collection(db, "orders");
         addDoc(ordersCollection, newOrder).then( ({id}) => console.log(id));
+        // addDoc(ordersCollection, newOrder).then( ({id}) => setOrderNumber(id));
     };
-
+    
     useEffect(() => {
         async function getId(db) {
     const ids = collection(db, "orders");
     const snapshot = await getDocs(ids);
     const idList = snapshot.docs.map((doc) => ({...doc.data(), id:doc.id}));
     return setOrderNumber(idList);
-    
     }
     getId(db);
-}, []);
-
+    }, []);
+    
+    const idCompra = () => {
+    const filtradoId = orderNumber.sort((a, b) => {
+        if (a.date > b.date) return -1
+        if (a.date < b.date) return 1
+        return 0});
+    const ultimoId = filtradoId[0];
+    console.log(ultimoId.id)
+    return ultimoId.id
+    }
 
     const finalizarPedido = () => {
         buy();
         crearPedido();
+        idCompra();
     }
+    console.log(idCompra);
     return (
         <div className="cart">   
             <Title text="Carrito"/>
@@ -116,14 +127,16 @@ const CartPage = () => {
                 ) : (
                 <><Loader className="spinner" type="Circles" color="#548aff" height={120} width={120}/>
                 <h3 className="vacio">El carrito está vacio</h3>
-                <Link to="/"><button className="volver">Ir a comprar</button></Link></>
+                <Link to="/"><button className="volver">Ir a comprar</button></Link>
+                <p>{idCompra}</p></>
                 )}
             </div>
             <FinalizarCompra isOpen= {isOpen1} closeFinalizar= {closeFinalizar1}>
                 <BuyerForm setBuyer={setBuyer} name="name" buyer={buyer} handleChange={handleChange}/>
-                <Link to="/">
+                {/* <Link to="/"> */}
                     <button className="botonesModal" onClick={finalizarPedido}>Finalizar compra</button>
-                </Link>
+                {/* </Link> */}
+                <p>{idCompra}</p>
             </FinalizarCompra>
         </div> 
     );

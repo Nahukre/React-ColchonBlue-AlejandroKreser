@@ -15,7 +15,6 @@ import { db } from "../../Firebase";
             const inversion = doc(db, "items", inversionesId);
             getDoc(inversion).then((snapshot) => {
                 if (snapshot.exists()) {
-                    console.log(snapshot.data());
                     setItem(snapshot.data());
                 }
             });

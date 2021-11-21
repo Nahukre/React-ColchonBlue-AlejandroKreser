@@ -23,10 +23,6 @@ export const ItemCount  = ({stock, initial, onAdd, quantity, id}) => {
         setCounter(counter);
     };
 
-console.log(cartData.quantity)
-console.log(cartData);
-console.log(quantity);
-
     const resetCounter = () => {
         setCounter(counter - (counter - 1));      
     };

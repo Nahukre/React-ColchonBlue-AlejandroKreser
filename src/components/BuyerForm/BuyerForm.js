@@ -19,14 +19,6 @@ export const BuyerForm = ({buyer,setBuyer, handleChange}) => {
         }
     ];
 
-
-    // function handleChange(evt) {
-    //     setBuyer({ ...buyer, [evt.target.name]: evt.target.value });
-    //     console.log(buyer);
-    //     console.log(setBuyer);
-    // }
-    console.log(buyer);
-
     return (
         <div>
             {inputs.map((input) => (
