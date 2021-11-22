@@ -114,3 +114,13 @@ padding-bottom: 3px;
     margin-top: 10px;
     color: #548aff;
 }
+.sumaResta {
+    min-width: 15px;
+}
+#resta {
+    margin-right: 6px;
+    margin-left: 0px;
+}
+#suma {
+    margin-left: 7px;
+}

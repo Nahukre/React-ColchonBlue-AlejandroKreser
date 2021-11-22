@@ -17,7 +17,7 @@ export const ItemCount  = ({stock, initial, onAdd, quantity, id}) => {
         setCounter(counter);
     };
     const suma = () => {
-        if (counter < stock) {
+        if (counter < stock ) {
         setCounter(counter + 1)}
         else
         setCounter(counter);

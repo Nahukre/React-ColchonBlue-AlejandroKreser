@@ -70,7 +70,8 @@ const CartPage = () => {
                     key={itemCarrito.id}
                     item={itemCarrito}>
                         <p>{itemCarrito.denominacion}</p>
-                        <p><button  onClick={restaCantidad}>-</button>{itemCarrito.quantity}<button  onClick={sumaCantidad}>+</button></p>
+                        <p>{itemCarrito.quantity}</p>
+                        {/* <p id="cantidad"><button className="sumaResta" id="resta" onClick={restaCantidad}>-</button>{itemCarrito.quantity}<button className="sumaResta" id="suma" onClick={sumaCantidad}>+</button></p> */}
                         <p>{itemCarrito.valor}</p>
                         <p>{itemCarrito.valor * itemCarrito.quantity}</p>
                         <button onClick={() => remove(itemCarrito.id)}>Eliminar</button>
@@ -89,16 +90,18 @@ const CartPage = () => {
                     </>
                 ) : (
                 <>
-                {orderNumber !== null ? (
+                {orderNumber.length < 1 ? (
+                    <div className="carritoVacio">
+                    <Loader className="spinner" type="Circles" color="#548aff" height={120} width={120} />
+                    <h3 className="vacio">El carrito está vacio</h3>
+                    <Link to="/"><button className="volver">Ir a comprar</button></Link>
+                    </div>
+                ) : (
                     <><h2 className="compraExitosa">Su compra fue exitosa</h2>
                     <p className="idCompra">El id de su compra es {orderNumber}</p>
                     <h3 className="gracias">Muchas gracias por elegirnos</h3>
                     <Link to="/"><button className="volver">Continuar comprando</button></Link>
-                    </>
-                ) : (
-                <><Loader className="spinner" type="Circles" color="#548aff" height={120} width={120} />
-                <h3 className="vacio">El carrito está vacio</h3>
-                <Link to="/"><button className="volver">Ir a comprar</button></Link></>)}
+                    </>)}
                 </>
                 )}
             </div>
