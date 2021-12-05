@@ -20,11 +20,6 @@ Start the server
 
   npm run start
 
-## Deployment
-
-To deploy this project run  https://github.com/Nahukre/React-ColchonBlue-AlejandroKreser.git
-
-
 ## Librerias extras uilizadas
 
 -react-router-dom
