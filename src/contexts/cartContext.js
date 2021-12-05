@@ -21,16 +21,7 @@ const Provider = ({ children }) => {
             return [...prev, itemCarrito];
         });
     };
-
-    const restaCantidad = (cartData) => {
-        if(cartData.quantity > 1) {
-        setCartData(cartData.quantity - 1)}
-    };
-    const sumaCantidad = (cartData, item) => {
-        if (cartData.quantity < item.stock){
-        setCartData(cartData.quantity + 1)}
-    };
-    console.log(cartData.quantity)
+    
     const remove = (id) => {
         setCartData(cartData.filter((item) => item.id !== id));
     };
@@ -45,7 +36,7 @@ const Provider = ({ children }) => {
     };
 
     return (
-        <CartContext.Provider value={{ addToCart, cartData, remove, buy, clear, itemsTotales, sumaCantidad, restaCantidad }}>
+        <CartContext.Provider value={{ addToCart, cartData, remove, buy, clear, itemsTotales }}>
         {children}
         </CartContext.Provider>
     );

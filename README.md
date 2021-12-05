@@ -8,6 +8,10 @@ Colchón blue es una plataforma de inversión en la que el usuario puede adquiri
 
 ## Run Locally
 
+Init
+
+  git init
+
 Clone the project
 
   git clone https://github.com/Nahukre/React-ColchonBlue-AlejandroKreser.git
@@ -18,10 +22,14 @@ Install dependencies
 
 Start the server
 
-  npm run start
+  npm start
 
-## Librerias extras uilizadas
+## Construido con
 
 -react-router-dom
 -react-router-hash-link
 -react-loader-spinner
+-Firebase/Firestore
+
+## Autor
+Alejandro Kreser

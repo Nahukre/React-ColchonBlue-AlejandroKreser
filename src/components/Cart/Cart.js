@@ -14,7 +14,7 @@ import BuyerForm from "../BuyerForm/BuyerForm";
 
 const CartPage = () => {
     const [isOpen1, openFinalizar1, closeFinalizar1] = useFinalizarCompra(false);
-    const { cartData, remove, buy, clear, itemsTotales,  } = useContext(CartContext);
+    const { cartData, remove, buy, clear, itemsTotales} = useContext(CartContext);
     const sumaTotal = (total, previo) => total + previo;
     const pagoTotal = cartData.map((itemCarrito) => itemCarrito.valor *  itemCarrito.quantity)
     .reduce(sumaTotal, 0); 
@@ -40,11 +40,12 @@ const CartPage = () => {
             total: pagoTotal,
         };
         setOrder(newOrder);
-        
+        setOrder(order);
+
         const ordersCollection = collection(db, "orders");
         addDoc(ordersCollection, newOrder).then( ({id}) => setOrderNumber(id));
-    };
-    
+    }
+
     const finalizarPedido = () => {
         buy();
         crearPedido();
@@ -54,7 +55,7 @@ const CartPage = () => {
     return (
         <div className="cart">   
             <Title text="Carrito"/>
-            <div key={cartData.id}>            
+            <div>            
             {cartData.length >= 1 ? (
                     <div className="tablaNombres" id="tablaNombres">
                         <p>Nombre</p>
