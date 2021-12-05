@@ -14,7 +14,7 @@ import BuyerForm from "../BuyerForm/BuyerForm";
 
 const CartPage = () => {
     const [isOpen1, openFinalizar1, closeFinalizar1] = useFinalizarCompra(false);
-    const { cartData, remove, buy, clear, itemsTotales, sumaCantidad, restaCantidad  } = useContext(CartContext);
+    const { cartData, remove, buy, clear, itemsTotales,  } = useContext(CartContext);
     const sumaTotal = (total, previo) => total + previo;
     const pagoTotal = cartData.map((itemCarrito) => itemCarrito.valor *  itemCarrito.quantity)
     .reduce(sumaTotal, 0); 

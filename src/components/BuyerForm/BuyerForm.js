@@ -1,5 +1,5 @@
 
-export const BuyerForm = ({buyer,setBuyer, handleChange}) => {
+export const BuyerForm = ({buyer, handleChange}) => {
     
     const inputs = [
         {
