@@ -72,7 +72,6 @@ const CartPage = () => {
                     item={itemCarrito}>
                         <p>{itemCarrito.denominacion}</p>
                         <p>{itemCarrito.quantity}</p>
-                        {/* <p id="cantidad"><button className="sumaResta" id="resta" onClick={restaCantidad}>-</button>{itemCarrito.quantity}<button className="sumaResta" id="suma" onClick={sumaCantidad}>+</button></p> */}
                         <p>{itemCarrito.valor}</p>
                         <p>{itemCarrito.valor * itemCarrito.quantity}</p>
                         <button onClick={() => remove(itemCarrito.id)}>Eliminar</button>
