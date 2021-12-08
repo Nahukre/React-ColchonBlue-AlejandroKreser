@@ -15,20 +15,20 @@ export const NavBar = () => {
             </div>
         </header>
         <div className="contenedorNav">
-        <nav>
-            <ul className="menu__items--font">
-                <li><NavLink activeClassName="active" className="item"  to="/">Home </NavLink>
-                    <ul>
-                        <li><NavLink activeClassName="active" className="subItem"  to="/category/tradicionales">Dolar y oro </NavLink></li>
-                        <li><NavLink activeClassName="active" className="subItem"  to="/category/acciones">Acciones </NavLink></li>
-                        <li><NavLink activeClassName="active" className="subItem"  to="/category/criptomonedas">Criptomonedas </NavLink></li>
-                    </ul>
-                </li>
-                <li><NavLink activeClassName="active" className="item"  to="/inversiones">Inversiones</NavLink></li>
-                <li><NavLink activeClassName="active" className="item"  to="/contacto">Contacto</NavLink></li>
-                <CartWidget/>
-            </ul>
-        </nav>
+            <nav>
+                <ul className="menu__items--font">
+                    <li><NavLink activeClassName="active" className="item"  to="/">Home </NavLink>
+                        <ul>
+                            <li><NavLink activeClassName="active" className="subItem"  to="/category/tradicionales">Dolar y oro </NavLink></li>
+                            <li><NavLink activeClassName="active" className="subItem"  to="/category/acciones">Acciones </NavLink></li>
+                            <li><NavLink activeClassName="active" className="subItem"  to="/category/criptomonedas">Criptomonedas </NavLink></li>
+                        </ul>
+                    </li>
+                    <li><NavLink activeClassName="active" className="item"  to="/inversiones">Inversiones</NavLink></li>
+                    <li><NavLink activeClassName="active" className="item"  to="/contacto">Contacto</NavLink></li>
+                    <CartWidget/>
+                </ul>
+            </nav>
         </div>
         </>
     );

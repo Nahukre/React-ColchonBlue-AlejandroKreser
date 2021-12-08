@@ -46,6 +46,7 @@
     margin-left: 20px;
     background-color: greenyellow;
 }
+
 .botonesCart:hover {
     background-color: #548aff;
     color: black;
@@ -62,13 +63,16 @@
     border-bottom: solid;
     border-color: black;
 }
+
 #tablaNombres {
     padding-bottom: 15px;
 }
+
 .tablaNombres p {
     margin-left: 10%;
     width: 10%;
 }
+
 .contenedortabla {
     border-bottom: solid;
     border-color: black;
@@ -76,11 +80,13 @@
     margin-right: 5%;
 
 }
+
 .tabla {
     display: flex;
     align-items: center;
     text-align: center;
 }
+
 .tabla p {
     margin-left: 10%;
     width: 10%;
@@ -104,23 +110,28 @@ padding-bottom: 3px;
     margin-top: 50px;
     color: #548aff;
 }
+
 .gracias{
     font-size: 25px;
     margin-top: 10px;
     color: #548aff;
 }
+
 .idCompra {
     font-size: 18px;
     margin-top: 10px;
     color: #548aff;
 }
+
 .sumaResta {
     min-width: 15px;
 }
+
 #resta {
     margin-right: 6px;
     margin-left: 0px;
 }
+
 #suma {
     margin-left: 7px;
 }

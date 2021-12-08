@@ -8,7 +8,7 @@ const Provider = ({ children }) => {
 
     const itemsTotales = cartData.reduce((total, itemCarrito) => total +itemCarrito.quantity, 0)
     const addToCart = (item, counter) => {
-        const itemCarrito = {denominacion: item.denominacion, valor: item.valor, id: item.id, quantity: counter}
+        const itemCarrito = {denominacion: item.denominacion, valor: item.valor, id: item.id, quantity: counter }
         setCartData((prev) => {
             const isItemInCart = prev.find((itemCarrito) => itemCarrito.id === item.id);
             if(isItemInCart) {

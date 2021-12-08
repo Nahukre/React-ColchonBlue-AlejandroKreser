@@ -1,4 +1,3 @@
-/* CardWidget */
 .carrito {
     width: 70px;
     height: 45px;
@@ -10,10 +9,6 @@
     text-align: right;
     display: inline-block;
 }
-
-/* .carrito:hover {
-    transform: scale(1.15)
-} */
 
 .ItemListContainer {
     background-color: #282c34;

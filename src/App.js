@@ -38,7 +38,7 @@ function App() {
             </div>  
           </Route>
           <Route exact path="/contacto">
-          < div className="App">
+            < div className="App">
               <Contacto />
             </div>  
           </Route>
@@ -56,7 +56,6 @@ function App() {
         <Footer />
       </Provider>
     </BrowserRouter>
-    
   );
 }
 

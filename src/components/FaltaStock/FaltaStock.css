@@ -1,4 +1,4 @@
-.modal {
+.falta {
     position: fixed;
     z-index: 1001;
     top:0;
@@ -11,11 +11,11 @@
     align-items: center;
 }
 
-.modal.is-open {
+.falta.is-open {
     display: flex;
 }
 
-.modalContainer {
+.faltaContainer {
     position: relative;
     background-color: #548aff;
     border-radius: 5px;
@@ -24,7 +24,7 @@
     padding: 5px;
 }
 
-.modalClose {
+.faltaClose {
     position: absolute;
     top: 3px;
     right: 5px;
@@ -37,12 +37,12 @@
     font-size: 30px;
 }
 
-.modalClose:hover {
+.faltaClose:hover {
     transform: scale(1.1);
 }
 
 .suProducto {
-    padding-top: 60px;
+    padding-top: 50px;
 }
 
 .botonesModal {

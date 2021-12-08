@@ -14,6 +14,7 @@
 .finalizarCompra.is-open {
     display: flex;
 }
+
 .finalizarContainer {
     position: relative;
     background-color: #548aff;

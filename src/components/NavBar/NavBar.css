@@ -112,9 +112,11 @@ nav li a {
 nav li ul {
     background-color: transparent;
 }
+
 nav li ul li {
     margin-bottom: 15px;
 }
+
 nav li ul li a {
     margin-left: 15px;
     background-color: #548aff;
@@ -124,6 +126,7 @@ nav li ul li a {
     border-color: greenyellow;
     padding: 3px;
 }
+
 nav li ul li a:hover {
     color: rgb(67, 95, 25);
 }
